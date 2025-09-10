@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Test Reading",
+    "spread_id": "single_card",
+    "question": "What do I need to know?",
+    "interpretation": "This is a test reading.",
+    "summary": "Test summary",
+    "advice": [
+      "Test advice"
+    ],
+    "tags": [
+      "test"
+    ],
+    "people_involved": [],
+    "is_private": false,
+    "id": "c047f9fe-07a0-4d3c-ac61-7affd8d0fa04",
+    "created_at": "2025-09-10T12:36:50.403765",
+    "updated_at": "2025-09-10T12:36:50.403767"
+  }
+]

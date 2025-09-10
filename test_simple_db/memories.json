@@ -1,0 +1,12 @@
+[
+  {
+    "id": "d5c1dcbb-e5b7-46ac-b3ee-41a7e7086c25",
+    "entity_type": "person",
+    "entity_name": "Test Person",
+    "description": "A test person for memory testing",
+    "context": "Testing memory functionality",
+    "importance_score": 0.8,
+    "last_mentioned": "2025-09-10T12:35:31.174067",
+    "created_at": "2025-09-10T12:35:31.174069"
+  }
+]

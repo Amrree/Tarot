@@ -1,0 +1,19 @@
+[
+  {
+    "id": "cfb05fe9-a6dc-4b31-bd5b-7bf8d49f4ad0",
+    "reading_id": "78c47807-c52c-4e56-81a7-56e21d3afd88",
+    "title": "Test Conversation",
+    "context": "Testing conversation functionality",
+    "is_memory_enabled": true,
+    "created_at": "2025-09-10T12:35:31.174164",
+    "updated_at": "2025-09-10T12:35:31.174215",
+    "messages": [
+      {
+        "id": 1,
+        "role": "user",
+        "content": "Hello, this is a test message",
+        "timestamp": "2025-09-10T12:35:31.174213"
+      }
+    ]
+  }
+]

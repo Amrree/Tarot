@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1b0c1d9a-d300-42ae-913d-ad119071c950",
+    "reading_id": "acbbe65f-7125-4940-bbe3-501825619ae2",
+    "title": "Reading Discussion",
+    "context": "Discussing the reading interpretation and guidance",
+    "is_memory_enabled": true,
+    "created_at": "2025-09-10T12:36:20.501064",
+    "updated_at": "2025-09-10T12:36:20.501844",
+    "messages": [
+      {
+        "id": 1,
+        "role": "user",
+        "content": "What does the Three of Wands mean in this context?",
+        "timestamp": "2025-09-10T12:36:20.501205"
+      },
+      {
+        "id": 2,
+        "role": "assistant",
+        "content": "The Three of Wands represents expansion and looking toward the future. In your reading, it suggests that new opportunities are on the horizon and you should be prepared to take action.",
+        "timestamp": "2025-09-10T12:36:20.501287"
+      },
+      {
+        "id": 3,
+        "role": "user",
+        "content": "How can I best prepare for these opportunities?",
+        "timestamp": "2025-09-10T12:36:20.501562"
+      },
+      {
+        "id": 4,
+        "role": "assistant",
+        "content": "The cards suggest trusting your intuition and being open to new experiences. Focus on developing your skills and maintaining a positive mindset.",
+        "timestamp": "2025-09-10T12:36:20.501842"
+      }
+    ]
+  }
+]

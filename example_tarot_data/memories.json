@@ -1,0 +1,32 @@
+[
+  {
+    "id": "49310298-4098-4d68-9c6a-0f433dd21284",
+    "entity_type": "concept",
+    "entity_name": "new opportunities",
+    "description": "Focus on emerging possibilities and chances for growth",
+    "context": "Daily reading guidance",
+    "importance_score": 0.8,
+    "last_mentioned": "2025-09-10T12:36:20.500311",
+    "created_at": "2025-09-10T12:36:20.500312"
+  },
+  {
+    "id": "f9b2c955-6eae-4b1d-b4c2-f5dfbe470f1d",
+    "entity_type": "concept",
+    "entity_name": "intuition",
+    "description": "Trusting inner wisdom and gut feelings",
+    "context": "Reading advice",
+    "importance_score": 0.9,
+    "last_mentioned": "2025-09-10T12:36:20.500409",
+    "created_at": "2025-09-10T12:36:20.500411"
+  },
+  {
+    "id": "4d9a2b65-706c-4d71-b0b6-bea8b364a609",
+    "entity_type": "person",
+    "entity_name": "Tarot Reader",
+    "description": "The person conducting this reading",
+    "context": "Reading session",
+    "importance_score": 0.6,
+    "last_mentioned": "2025-09-10T12:36:20.500494",
+    "created_at": "2025-09-10T12:36:20.500496"
+  }
+]

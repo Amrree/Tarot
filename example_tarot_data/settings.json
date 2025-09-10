@@ -1,0 +1,6 @@
+{
+  "ai_model": "llama2",
+  "theme": "dark",
+  "auto_save": true,
+  "notifications": false
+}

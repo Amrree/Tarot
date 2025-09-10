@@ -1,0 +1,12 @@
+[
+  {
+    "id": "579bd1b6-c2da-4ca9-b129-8022b416e7f8",
+    "entity_type": "person",
+    "entity_name": "Test Person",
+    "description": "A test person",
+    "context": null,
+    "importance_score": 0.8,
+    "last_mentioned": "2025-09-10T12:36:50.403861",
+    "created_at": "2025-09-10T12:36:50.403862"
+  }
+]

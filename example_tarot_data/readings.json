@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Example Reading",
+    "spread_id": "three_card",
+    "question": "What guidance do I need for today?",
+    "interpretation": "The cards suggest focusing on new opportunities and trusting your intuition.",
+    "summary": "A day of new beginnings and intuitive guidance.",
+    "advice": [
+      "Trust your instincts",
+      "Be open to new opportunities",
+      "Take action on your ideas"
+    ],
+    "tags": [
+      "daily",
+      "guidance",
+      "new beginnings"
+    ],
+    "people_involved": [],
+    "is_private": false,
+    "id": "acbbe65f-7125-4940-bbe3-501825619ae2",
+    "created_at": "2025-09-10T12:36:20.500213",
+    "updated_at": "2025-09-10T12:36:20.500216"
+  }
+]

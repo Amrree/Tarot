@@ -1,0 +1,88 @@
+[
+  {
+    "id": "single_card",
+    "name": "Single Card",
+    "description": "A simple one-card reading for daily guidance or quick insights.",
+    "positions": [
+      {
+        "name": "Guidance",
+        "description": "What you need to know right now"
+      }
+    ],
+    "is_custom": false,
+    "created_by": null,
+    "created_at": "2025-09-10T12:36:50.403580"
+  },
+  {
+    "id": "three_card",
+    "name": "Three Card Spread",
+    "description": "Past, Present, Future reading for understanding life flow.",
+    "positions": [
+      {
+        "name": "Past",
+        "description": "What has influenced your current situation"
+      },
+      {
+        "name": "Present",
+        "description": "Your current circumstances and mindset"
+      },
+      {
+        "name": "Future",
+        "description": "What is likely to unfold"
+      }
+    ],
+    "is_custom": false,
+    "created_by": null,
+    "created_at": "2025-09-10T12:36:50.403585"
+  },
+  {
+    "id": "celtic_cross",
+    "name": "Celtic Cross",
+    "description": "A comprehensive 10-card spread for deep insight.",
+    "positions": [
+      {
+        "name": "Present Situation",
+        "description": "What is happening now"
+      },
+      {
+        "name": "Challenge",
+        "description": "What is blocking or helping you"
+      },
+      {
+        "name": "Past",
+        "description": "What has led to this situation"
+      },
+      {
+        "name": "Future",
+        "description": "What is likely to happen"
+      },
+      {
+        "name": "Above",
+        "description": "Your conscious goals and aspirations"
+      },
+      {
+        "name": "Below",
+        "description": "Your subconscious influences"
+      },
+      {
+        "name": "Advice",
+        "description": "How to approach the situation"
+      },
+      {
+        "name": "External Influences",
+        "description": "People or events affecting you"
+      },
+      {
+        "name": "Hopes and Fears",
+        "description": "Your inner hopes and concerns"
+      },
+      {
+        "name": "Outcome",
+        "description": "The likely resolution"
+      }
+    ],
+    "is_custom": false,
+    "created_by": null,
+    "created_at": "2025-09-10T12:36:50.403587"
+  }
+]
