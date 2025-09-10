@@ -1,0 +1,528 @@
+{
+  "engine_specification": {
+    "version": "1.0.0",
+    "description": "Tarot Influence Engine API Specification",
+    "author": "Tarot Studio Team",
+    "date": "2024-01-15"
+  },
+  "api_contract": {
+    "input_schema": {
+      "type": "object",
+      "required": ["reading_id", "spread_type", "positions"],
+      "properties": {
+        "reading_id": {
+          "type": "string",
+          "description": "Unique identifier for the reading"
+        },
+        "date_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO8601 timestamp of the reading"
+        },
+        "spread_type": {
+          "type": "string",
+          "enum": ["single_card", "three_card", "celtic_cross", "relationship_cross", "year_ahead"],
+          "description": "Type of tarot spread"
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["position_id", "card_id", "orientation"],
+            "properties": {
+              "position_id": {
+                "type": "string",
+                "description": "Position identifier in the spread"
+              },
+              "card_id": {
+                "type": "string",
+                "description": "Card identifier from the deck"
+              },
+              "orientation": {
+                "type": "string",
+                "enum": ["upright", "reversed"],
+                "description": "Card orientation"
+              }
+            }
+          }
+        },
+        "user_context": {
+          "type": "string",
+          "description": "Optional user question or context"
+        },
+        "engine_config": {
+          "type": "object",
+          "properties": {
+            "dominance_multiplier": {"type": "number", "default": 1.5},
+            "reversal_decay_factor": {"type": "number", "default": 0.8},
+            "conflict_threshold": {"type": "number", "default": 0.5},
+            "theme_threshold": {"type": "number", "default": 0.3},
+            "enable_llm_generation": {"type": "boolean", "default": true}
+          }
+        },
+        "rule_overrides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {"type": "string"},
+              "card_id": {"type": "string"},
+              "multiplier": {"type": "number"},
+              "theme": {"type": "string"},
+              "boost_factor": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "output_schema": {
+      "type": "object",
+      "required": ["reading_id", "summary", "cards"],
+      "properties": {
+        "reading_id": {"type": "string"},
+        "summary": {"type": "string"},
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["position", "card_id", "card_name", "orientation", "base_text", "influenced_text", "polarity_score", "intensity_score", "themes", "influence_factors", "journal_prompt"],
+            "properties": {
+              "position": {"type": "string"},
+              "card_id": {"type": "string"},
+              "card_name": {"type": "string"},
+              "orientation": {"type": "string", "enum": ["upright", "reversed"]},
+              "base_text": {"type": "string"},
+              "influenced_text": {"type": "string"},
+              "polarity_score": {"type": "number", "minimum": -2.0, "maximum": 2.0},
+              "intensity_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+              "themes": {
+                "type": "object",
+                "additionalProperties": {"type": "number", "minimum": 0.0, "maximum": 1.0}
+              },
+              "influence_factors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["source_position", "source_card_id", "effect", "explain"],
+                  "properties": {
+                    "source_position": {"type": "string"},
+                    "source_card_id": {"type": "string"},
+                    "effect": {"type": "string"},
+                    "explain": {"type": "string"}
+                  }
+                }
+              },
+              "journal_prompt": {"type": "string"}
+            }
+          }
+        },
+        "advice": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "follow_up_questions": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  },
+  "canonical_spreads": {
+    "single_card": {
+      "description": "A simple one-card reading for daily guidance",
+      "positions": [
+        {"position_id": "guidance", "description": "What you need to know right now"}
+      ],
+      "adjacency_matrix": {},
+      "example_input": {
+        "reading_id": "single_001",
+        "date_time": "2024-01-15T10:30:00Z",
+        "spread_type": "single_card",
+        "positions": [
+          {"position_id": "guidance", "card_id": "the_sun", "orientation": "upright"}
+        ],
+        "user_context": "What should I focus on today?"
+      },
+      "expected_output": {
+        "reading_id": "single_001",
+        "summary": "A reading of joy, success, and vitality - embrace the positive energy around you.",
+        "cards": [
+          {
+            "position": "guidance",
+            "card_id": "the_sun",
+            "card_name": "The Sun",
+            "orientation": "upright",
+            "base_text": "The Sun represents joy, success, and vitality. This card signifies achievement, optimism, and the fulfillment of goals.",
+            "influenced_text": "The Sun represents joy, success, and vitality. This card signifies achievement, optimism, and the fulfillment of goals.",
+            "polarity_score": 1.0,
+            "intensity_score": 0.9,
+            "themes": {"joy": 0.9, "success": 0.8, "vitality": 0.7, "optimism": 0.6},
+            "influence_factors": [],
+            "journal_prompt": "Reflect on The Sun in the guidance position. What does this card tell you about your current situation?"
+          }
+        ],
+        "advice": ["Embrace the positive energy", "Celebrate your achievements", "Share your joy with others"],
+        "follow_up_questions": ["What brings you the most joy?", "How can you maintain this positive momentum?"]
+      }
+    },
+    "three_card": {
+      "description": "Past, Present, Future reading for understanding life flow",
+      "positions": [
+        {"position_id": "past", "description": "What has influenced your current situation"},
+        {"position_id": "present", "description": "Your current circumstances and mindset"},
+        {"position_id": "future", "description": "What is likely to unfold"}
+      ],
+      "adjacency_matrix": {
+        "past": {"present": 1.0, "future": 0.5},
+        "present": {"past": 1.0, "future": 1.0},
+        "future": {"past": 0.5, "present": 1.0}
+      },
+      "example_input": {
+        "reading_id": "three_001",
+        "date_time": "2024-01-15T10:30:00Z",
+        "spread_type": "three_card",
+        "positions": [
+          {"position_id": "past", "card_id": "the_sun", "orientation": "upright"},
+          {"position_id": "present", "card_id": "three_of_cups", "orientation": "upright"},
+          {"position_id": "future", "card_id": "ace_of_wands", "orientation": "upright"}
+        ],
+        "user_context": "What does my future hold?"
+      },
+      "expected_output": {
+        "reading_id": "three_001",
+        "summary": "A reading of joy, celebration, and new beginnings - your past success leads to present celebration and future inspiration.",
+        "cards": [
+          {
+            "position": "past",
+            "card_id": "the_sun",
+            "card_name": "The Sun",
+            "orientation": "upright",
+            "base_text": "The Sun represents joy, success, and vitality. This card signifies achievement, optimism, and the fulfillment of goals.",
+            "influenced_text": "The Sun represents joy, success, and vitality. This card signifies achievement, optimism, and the fulfillment of goals. This meaning is enhanced by three_of_cups, ace_of_wands.",
+            "polarity_score": 1.4,
+            "intensity_score": 0.9,
+            "themes": {"joy": 0.9, "success": 0.8, "vitality": 0.7, "celebration": 0.6, "inspiration": 0.5},
+            "influence_factors": [
+              {"source_position": "present", "source_card_id": "three_of_cups", "effect": "+0.24", "explain": "Adjacency influence from Three of Cups"},
+              {"source_position": "future", "source_card_id": "ace_of_wands", "effect": "+0.16", "explain": "Adjacency influence from Ace of Wands"}
+            ],
+            "journal_prompt": "Reflect on The Sun in the past position. Consider how the influence of three_of_cups, ace_of_wands affects this card's meaning. What does this card tell you about your current situation?"
+          },
+          {
+            "position": "present",
+            "card_id": "three_of_cups",
+            "card_name": "Three of Cups",
+            "orientation": "upright",
+            "base_text": "The Three of Cups represents celebration, friendship, and joy. This card signifies a time of happiness and social connection.",
+            "influenced_text": "The Three of Cups represents celebration, friendship, and joy. This card signifies a time of happiness and social connection. This meaning is enhanced by the_sun, ace_of_wands.",
+            "polarity_score": 2.0,
+            "intensity_score": 0.8,
+            "themes": {"celebration": 0.9, "friendship": 0.8, "joy": 0.7, "success": 0.6, "inspiration": 0.5},
+            "influence_factors": [
+              {"source_position": "past", "source_card_id": "the_sun", "effect": "+1.80", "explain": "Major Arcana dominance from The Sun"},
+              {"source_position": "past", "source_card_id": "the_sun", "effect": "+0.60", "explain": "Adjacency influence from The Sun"},
+              {"source_position": "future", "source_card_id": "ace_of_wands", "effect": "+0.08", "explain": "Elemental affinity: cups + wands"},
+              {"source_position": "future", "source_card_id": "ace_of_wands", "effect": "+0.16", "explain": "Adjacency influence from Ace of Wands"}
+            ],
+            "journal_prompt": "Reflect on Three of Cups in the present position. Consider how the influence of the_sun, ace_of_wands affects this card's meaning. What does this card tell you about your current situation?"
+          },
+          {
+            "position": "future",
+            "card_id": "ace_of_wands",
+            "card_name": "Ace of Wands",
+            "orientation": "upright",
+            "base_text": "The Ace of Wands represents new inspiration, creative energy, and the spark of new beginnings. This card signifies the potential for growth and the excitement of starting something new.",
+            "influenced_text": "The Ace of Wands represents new inspiration, creative energy, and the spark of new beginnings. This card signifies the potential for growth and the excitement of starting something new. This meaning is enhanced by the_sun, three_of_cups.",
+            "polarity_score": 2.0,
+            "intensity_score": 0.8,
+            "themes": {"inspiration": 0.9, "creativity": 0.8, "new_beginnings": 0.7, "joy": 0.6, "celebration": 0.5},
+            "influence_factors": [
+              {"source_position": "past", "source_card_id": "the_sun", "effect": "+1.80", "explain": "Major Arcana dominance from The Sun"},
+              {"source_position": "past", "source_card_id": "the_sun", "effect": "+0.60", "explain": "Adjacency influence from The Sun"},
+              {"source_position": "present", "source_card_id": "three_of_cups", "effect": "+0.24", "explain": "Adjacency influence from Three of Cups"}
+            ],
+            "journal_prompt": "Reflect on Ace of Wands in the future position. Consider how the influence of the_sun, three_of_cups affects this card's meaning. What does this card tell you about your current situation?"
+          }
+        ],
+        "advice": ["Celebrate your past successes", "Embrace the joy in your present", "Channel your inspiration into action"],
+        "follow_up_questions": ["How can you build on your past achievements?", "What new projects excite you?", "How can you share your joy with others?"]
+      }
+    },
+    "celtic_cross": {
+      "description": "A comprehensive 10-card spread for deep insight",
+      "positions": [
+        {"position_id": "situation", "description": "What is happening now"},
+        {"position_id": "challenge", "description": "What is blocking or helping you"},
+        {"position_id": "past", "description": "What has led to this situation"},
+        {"position_id": "future", "description": "What is likely to happen"},
+        {"position_id": "above", "description": "Your conscious goals and aspirations"},
+        {"position_id": "below", "description": "Your subconscious influences"},
+        {"position_id": "advice", "description": "How to approach the situation"},
+        {"position_id": "external", "description": "People or events affecting you"},
+        {"position_id": "hopes_fears", "description": "Your inner hopes and concerns"},
+        {"position_id": "outcome", "description": "The likely resolution"}
+      ],
+      "adjacency_matrix": {
+        "situation": {"challenge": 1.0, "past": 0.4, "future": 0.4, "above": 0.4, "below": 0.4},
+        "challenge": {"situation": 1.0, "past": 0.4, "future": 0.4, "above": 0.4, "below": 0.4},
+        "past": {"situation": 0.4, "challenge": 0.4, "future": 0.8, "advice": 0.6},
+        "future": {"situation": 0.4, "challenge": 0.4, "past": 0.8, "advice": 0.6},
+        "above": {"situation": 0.4, "challenge": 0.4, "below": 0.8, "advice": 0.6},
+        "below": {"situation": 0.4, "challenge": 0.4, "above": 0.8, "advice": 0.6},
+        "advice": {"past": 0.6, "future": 0.6, "above": 0.6, "below": 0.6, "external": 0.8},
+        "external": {"advice": 0.8, "hopes_fears": 0.8, "outcome": 0.6},
+        "hopes_fears": {"external": 0.8, "outcome": 0.8},
+        "outcome": {"external": 0.6, "hopes_fears": 0.8}
+      },
+      "example_input": {
+        "reading_id": "celtic_001",
+        "date_time": "2024-01-15T10:30:00Z",
+        "spread_type": "celtic_cross",
+        "positions": [
+          {"position_id": "situation", "card_id": "the_magician", "orientation": "upright"},
+          {"position_id": "challenge", "card_id": "five_of_wands", "orientation": "upright"},
+          {"position_id": "past", "card_id": "ace_of_cups", "orientation": "upright"},
+          {"position_id": "future", "card_id": "the_star", "orientation": "upright"},
+          {"position_id": "above", "card_id": "queen_of_wands", "orientation": "upright"},
+          {"position_id": "below", "card_id": "two_of_pentacles", "orientation": "upright"},
+          {"position_id": "advice", "card_id": "temperance", "orientation": "upright"},
+          {"position_id": "external", "card_id": "knight_of_swords", "orientation": "upright"},
+          {"position_id": "hopes_fears", "card_id": "nine_of_cups", "orientation": "upright"},
+          {"position_id": "outcome", "card_id": "the_world", "orientation": "upright"}
+        ],
+        "user_context": "What does my future hold in my career?"
+      },
+      "expected_output": {
+        "reading_id": "celtic_001",
+        "summary": "A complex reading showing mastery and conflict leading to hope and completion - your skills face challenges but ultimately lead to fulfillment.",
+        "cards": [
+          {
+            "position": "situation",
+            "card_id": "the_magician",
+            "card_name": "The Magician",
+            "orientation": "upright",
+            "base_text": "The Magician represents the power of manifestation and the ability to turn ideas into reality. This card signifies having all the tools and resources needed to achieve your goals.",
+            "influenced_text": "The Magician represents the power of manifestation and the ability to turn ideas into reality. This card signifies having all the tools and resources needed to achieve your goals. This meaning is enhanced by five_of_wands, ace_of_cups, the_star, queen_of_wands, two_of_pentacles.",
+            "polarity_score": 1.8,
+            "intensity_score": 0.9,
+            "themes": {"manifestation": 0.9, "power": 0.8, "skill": 0.7, "conflict": 0.6, "hope": 0.5},
+            "influence_factors": [
+              {"source_position": "challenge", "source_card_id": "five_of_wands", "effect": "+0.20", "explain": "Adjacency influence from Five of Wands"},
+              {"source_position": "past", "source_card_id": "ace_of_cups", "effect": "+0.16", "explain": "Adjacency influence from Ace of Cups"},
+              {"source_position": "future", "source_card_id": "the_star", "effect": "+0.20", "explain": "Adjacency influence from The Star"},
+              {"source_position": "above", "source_card_id": "queen_of_wands", "effect": "+0.16", "explain": "Adjacency influence from Queen of Wands"},
+              {"source_position": "below", "source_card_id": "two_of_pentacles", "effect": "+0.16", "explain": "Adjacency influence from Two of Pentacles"}
+            ],
+            "journal_prompt": "Reflect on The Magician in the situation position. Consider how the influence of five_of_wands, ace_of_cups, the_star, queen_of_wands, two_of_pentacles affects this card's meaning. What does this card tell you about your current situation?"
+          }
+        ],
+        "advice": ["Use your skills to navigate conflicts", "Balance different aspects of your life", "Stay hopeful during challenges"],
+        "follow_up_questions": ["What tools do you have available?", "How can you resolve current conflicts?", "What are you hoping to achieve?"]
+      }
+    },
+    "relationship_cross": {
+      "description": "A 7-card spread for relationship insights",
+      "positions": [
+        {"position_id": "you", "description": "Your role in the relationship"},
+        {"position_id": "partner", "description": "Your partner's role"},
+        {"position_id": "connection", "description": "What binds you together"},
+        {"position_id": "challenge", "description": "What challenges the relationship"},
+        {"position_id": "advice", "description": "How to strengthen the relationship"},
+        {"position_id": "outcome", "description": "Where the relationship is heading"},
+        {"position_id": "lesson", "description": "What you can learn from this relationship"}
+      ],
+      "adjacency_matrix": {
+        "you": {"partner": 1.0, "connection": 0.8, "challenge": 0.6},
+        "partner": {"you": 1.0, "connection": 0.8, "challenge": 0.6},
+        "connection": {"you": 0.8, "partner": 0.8, "challenge": 0.8, "advice": 0.8},
+        "challenge": {"you": 0.6, "partner": 0.6, "connection": 0.8, "advice": 0.8},
+        "advice": {"connection": 0.8, "challenge": 0.8, "outcome": 0.8, "lesson": 0.8},
+        "outcome": {"advice": 0.8, "lesson": 0.8},
+        "lesson": {"advice": 0.8, "outcome": 0.8}
+      },
+      "example_input": {
+        "reading_id": "relationship_001",
+        "date_time": "2024-01-15T10:30:00Z",
+        "spread_type": "relationship_cross",
+        "positions": [
+          {"position_id": "you", "card_id": "queen_of_cups", "orientation": "upright"},
+          {"position_id": "partner", "card_id": "king_of_wands", "orientation": "upright"},
+          {"position_id": "connection", "card_id": "the_lovers", "orientation": "upright"},
+          {"position_id": "challenge", "card_id": "five_of_swords", "orientation": "upright"},
+          {"position_id": "advice", "card_id": "temperance", "orientation": "upright"},
+          {"position_id": "outcome", "card_id": "ten_of_cups", "orientation": "upright"},
+          {"position_id": "lesson", "card_id": "the_hierophant", "orientation": "upright"}
+        ],
+        "user_context": "What does my relationship need?"
+      },
+      "expected_output": {
+        "reading_id": "relationship_001",
+        "summary": "A relationship reading showing emotional depth and passion, with love overcoming challenges to reach fulfillment.",
+        "cards": [
+          {
+            "position": "you",
+            "card_id": "queen_of_cups",
+            "card_name": "Queen of Cups",
+            "orientation": "upright",
+            "base_text": "The Queen of Cups represents emotional intelligence, intuition, and compassion. This card signifies deep emotional understanding and nurturing qualities.",
+            "influenced_text": "The Queen of Cups represents emotional intelligence, intuition, and compassion. This card signifies deep emotional understanding and nurturing qualities. This meaning is enhanced by king_of_wands, the_lovers, five_of_swords.",
+            "polarity_score": 1.6,
+            "intensity_score": 0.8,
+            "themes": {"emotion": 0.9, "intuition": 0.8, "compassion": 0.7, "love": 0.6, "conflict": 0.5},
+            "influence_factors": [
+              {"source_position": "partner", "source_card_id": "king_of_wands", "effect": "+0.20", "explain": "Adjacency influence from King of Wands"},
+              {"source_position": "connection", "source_card_id": "the_lovers", "effect": "+0.32", "explain": "Adjacency influence from The Lovers"},
+              {"source_position": "challenge", "source_card_id": "five_of_swords", "effect": "+0.12", "explain": "Adjacency influence from Five of Swords"}
+            ],
+            "journal_prompt": "Reflect on Queen of Cups in the you position. Consider how the influence of king_of_wands, the_lovers, five_of_swords affects this card's meaning. What does this card tell you about your current situation?"
+          }
+        ],
+        "advice": ["Trust your emotional intuition", "Balance passion with compassion", "Work through conflicts together"],
+        "follow_up_questions": ["How do you express your emotions?", "What draws you to your partner?", "How can you resolve conflicts?"]
+      }
+    },
+    "year_ahead": {
+      "description": "A 12-card spread for yearly guidance",
+      "positions": [
+        {"position_id": "january", "description": "January energy and focus"},
+        {"position_id": "february", "description": "February energy and focus"},
+        {"position_id": "march", "description": "March energy and focus"},
+        {"position_id": "april", "description": "April energy and focus"},
+        {"position_id": "may", "description": "May energy and focus"},
+        {"position_id": "june", "description": "June energy and focus"},
+        {"position_id": "july", "description": "July energy and focus"},
+        {"position_id": "august", "description": "August energy and focus"},
+        {"position_id": "september", "description": "September energy and focus"},
+        {"position_id": "october", "description": "October energy and focus"},
+        {"position_id": "november", "description": "November energy and focus"},
+        {"position_id": "december", "description": "December energy and focus"}
+      ],
+      "adjacency_matrix": {
+        "january": {"february": 1.0, "december": 0.5},
+        "february": {"january": 1.0, "march": 1.0},
+        "march": {"february": 1.0, "april": 1.0},
+        "april": {"march": 1.0, "may": 1.0},
+        "may": {"april": 1.0, "june": 1.0},
+        "june": {"may": 1.0, "july": 1.0},
+        "july": {"june": 1.0, "august": 1.0},
+        "august": {"july": 1.0, "september": 1.0},
+        "september": {"august": 1.0, "october": 1.0},
+        "october": {"september": 1.0, "november": 1.0},
+        "november": {"october": 1.0, "december": 1.0},
+        "december": {"november": 1.0, "january": 0.5}
+      },
+      "example_input": {
+        "reading_id": "year_001",
+        "date_time": "2024-01-15T10:30:00Z",
+        "spread_type": "year_ahead",
+        "positions": [
+          {"position_id": "january", "card_id": "ace_of_wands", "orientation": "upright"},
+          {"position_id": "february", "card_id": "two_of_cups", "orientation": "upright"},
+          {"position_id": "march", "card_id": "three_of_swords", "orientation": "upright"},
+          {"position_id": "april", "card_id": "four_of_pentacles", "orientation": "upright"},
+          {"position_id": "may", "card_id": "five_of_wands", "orientation": "upright"},
+          {"position_id": "june", "card_id": "six_of_cups", "orientation": "upright"},
+          {"position_id": "july", "card_id": "seven_of_swords", "orientation": "upright"},
+          {"position_id": "august", "card_id": "eight_of_pentacles", "orientation": "upright"},
+          {"position_id": "september", "card_id": "nine_of_wands", "orientation": "upright"},
+          {"position_id": "october", "card_id": "ten_of_cups", "orientation": "upright"},
+          {"position_id": "november", "card_id": "page_of_wands", "orientation": "upright"},
+          {"position_id": "december", "card_id": "knight_of_cups", "orientation": "upright"}
+        ],
+        "user_context": "What will this year bring?"
+      },
+      "expected_output": {
+        "reading_id": "year_001",
+        "summary": "A year of growth, challenges, and fulfillment - starting with inspiration, facing difficulties, and ending with emotional satisfaction.",
+        "cards": [
+          {
+            "position": "january",
+            "card_id": "ace_of_wands",
+            "card_name": "Ace of Wands",
+            "orientation": "upright",
+            "base_text": "The Ace of Wands represents new inspiration, creative energy, and the spark of new beginnings. This card signifies the potential for growth and the excitement of starting something new.",
+            "influenced_text": "The Ace of Wands represents new inspiration, creative energy, and the spark of new beginnings. This card signifies the potential for growth and the excitement of starting something new. This meaning is enhanced by two_of_cups, knight_of_cups.",
+            "polarity_score": 1.2,
+            "intensity_score": 0.8,
+            "themes": {"inspiration": 0.9, "creativity": 0.8, "new_beginnings": 0.7, "love": 0.6, "emotion": 0.5},
+            "influence_factors": [
+              {"source_position": "february", "source_card_id": "two_of_cups", "effect": "+0.20", "explain": "Adjacency influence from Two of Cups"},
+              {"source_position": "december", "source_card_id": "knight_of_cups", "effect": "+0.10", "explain": "Adjacency influence from Knight of Cups"}
+            ],
+            "journal_prompt": "Reflect on Ace of Wands in the january position. Consider how the influence of two_of_cups, knight_of_cups affects this card's meaning. What does this card tell you about your current situation?"
+          }
+        ],
+        "advice": ["Start the year with enthusiasm", "Embrace new opportunities", "Stay open to love and connection"],
+        "follow_up_questions": ["What new projects excite you?", "How can you channel your creative energy?", "What relationships do you want to nurture?"]
+      }
+    }
+  },
+  "error_handling": {
+    "validation_errors": {
+      "invalid_card_id": {
+        "error_code": "INVALID_CARD_ID",
+        "message": "Card ID not found in deck",
+        "response": "Return error with valid card list"
+      },
+      "invalid_orientation": {
+        "error_code": "INVALID_ORIENTATION",
+        "message": "Invalid card orientation",
+        "response": "Default to 'upright'"
+      },
+      "missing_required_field": {
+        "error_code": "MISSING_FIELD",
+        "message": "Required field missing",
+        "response": "Return error with missing field list"
+      },
+      "invalid_numeric_range": {
+        "error_code": "INVALID_RANGE",
+        "message": "Numeric value out of range",
+        "response": "Clamp to valid range with warning"
+      }
+    },
+    "processing_errors": {
+      "rule_application_failure": {
+        "error_code": "RULE_FAILURE",
+        "message": "Rule application failed",
+        "response": "Log error, continue with remaining rules"
+      },
+      "llm_generation_failure": {
+        "error_code": "LLM_FAILURE",
+        "message": "LLM generation failed",
+        "response": "Fall back to template generation"
+      },
+      "schema_validation_failure": {
+        "error_code": "SCHEMA_FAILURE",
+        "message": "Output schema validation failed",
+        "response": "Return error with validation details"
+      }
+    }
+  },
+  "performance_benchmarks": {
+    "single_card": "< 50ms",
+    "three_card": "< 100ms",
+    "celtic_cross": "< 200ms",
+    "relationship_cross": "< 150ms",
+    "year_ahead": "< 300ms"
+  },
+  "testing_requirements": {
+    "unit_tests": [
+      "Individual rule functions with known inputs/outputs",
+      "Edge cases for each rule type",
+      "Configuration validation",
+      "Schema compliance"
+    ],
+    "integration_tests": [
+      "Complete spread processing",
+      "Rule interaction effects",
+      "LLM fallback behavior",
+      "Performance benchmarks"
+    ],
+    "validation_tests": [
+      "JSON schema compliance",
+      "Numeric range validation",
+      "Deterministic output verification",
+      "Error handling coverage"
+    ]
+  }
+}
