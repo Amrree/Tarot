@@ -7,11 +7,27 @@ tarot interpretations and conversational features.
 
 import json
 import asyncio
-from typing import Dict, List, Any, Optional, AsyncGenerator
-from dataclasses import dataclass
-import ollama
-from ollama import Client
+from typing import Dict, List, Any, Optional, AsyncGenerator, Union
+from dataclasses import dataclass, field
+from datetime import datetime
 import logging
+import time
+import threading
+
+try:
+    import ollama
+    from ollama import Client
+    OLLAMA_AVAILABLE = True
+except ImportError:
+    OLLAMA_AVAILABLE = False
+    # Create mock classes for testing
+    class Client:
+        def __init__(self, host=None):
+            pass
+        def list(self):
+            return {'models': []}
+        def generate(self, model, prompt, **kwargs):
+            return {'response': 'Mock response'}
 
 logger = logging.getLogger(__name__)
 
@@ -30,8 +46,30 @@ class ConversationContext:
     """Context for AI conversations."""
     reading_id: Optional[str] = None
     card_context: Optional[Dict[str, Any]] = None
-    memory_context: List[Dict[str, Any]] = None
-    conversation_history: List[Dict[str, str]] = None
+    memory_context: List[Dict[str, Any]] = field(default_factory=list)
+    conversation_history: List[Dict[str, str]] = field(default_factory=list)
+    user_preferences: Dict[str, Any] = field(default_factory=dict)
+    session_id: Optional[str] = None
+
+@dataclass
+class ModelInfo:
+    """Information about an Ollama model."""
+    name: str
+    size: int
+    modified_at: str
+    family: str
+    format: str
+    families: List[str]
+    parameter_size: str
+    quantization_level: str
+
+@dataclass
+class AIError:
+    """AI error information."""
+    error_type: str
+    message: str
+    timestamp: datetime
+    context: Optional[Dict[str, Any]] = None
 
 class OllamaClient:
     """Client for interacting with Ollama LLM."""
@@ -40,15 +78,65 @@ class OllamaClient:
         self.client = Client(host=base_url)
         self.model_name = model_name
         self.base_url = base_url
+        self._available_models: List[ModelInfo] = []
+        self._last_connection_check = 0
+        self._connection_cache_duration = 30  # seconds
+        self._lock = threading.Lock()
+        
+    def _is_connection_cache_valid(self) -> bool:
+        """Check if connection cache is still valid."""
+        return time.time() - self._last_connection_check < self._connection_cache_duration
         
     async def check_connection(self) -> bool:
         """Check if Ollama is running and accessible."""
+        if self._is_connection_cache_valid():
+            return len(self._available_models) > 0
+            
         try:
-            models = self.client.list()
-            return True
+            with self._lock:
+                models_response = self.client.list()
+                self._available_models = [
+                    ModelInfo(
+                        name=model['name'],
+                        size=model.get('size', 0),
+                        modified_at=model.get('modified_at', ''),
+                        family=model.get('family', ''),
+                        format=model.get('format', ''),
+                        families=model.get('families', []),
+                        parameter_size=model.get('parameter_size', ''),
+                        quantization_level=model.get('quantization_level', '')
+                    )
+                    for model in models_response.get('models', [])
+                ]
+                self._last_connection_check = time.time()
+                return True
         except Exception as e:
             logger.error(f"Failed to connect to Ollama: {e}")
+            self._available_models = []
+            self._last_connection_check = time.time()
             return False
+    
+    def get_available_models(self) -> List[ModelInfo]:
+        """Get list of available models."""
+        return self._available_models.copy()
+    
+    def is_model_available(self, model_name: str) -> bool:
+        """Check if a specific model is available."""
+        return any(model.name == model_name for model in self._available_models)
+    
+    def set_model(self, model_name: str) -> bool:
+        """Set the active model."""
+        if self.is_model_available(model_name):
+            self.model_name = model_name
+            return True
+        return False
+    
+    def get_model_info(self) -> Optional[ModelInfo]:
+        """Get information about the current model."""
+        for model in self._available_models:
+            if model.name == self.model_name:
+                return model
+        return None
     
     async def pull_model(self, model_name: str = None) -> bool:
         """Pull a model from Ollama registry."""
