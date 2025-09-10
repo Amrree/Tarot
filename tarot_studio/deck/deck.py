@@ -9,7 +9,7 @@ import json
 import random
 from typing import List, Dict, Any, Optional, Union
 from pathlib import Path
-from card import Card, Orientation, Arcana, Suit, Element
+from .card import Card, Orientation, Arcana, Suit, Element
 
 
 class Deck:
