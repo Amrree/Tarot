@@ -1,0 +1,2420 @@
+{
+  "deck_info": {
+    "name": "Rider-Waite Tarot",
+    "version": "1.0",
+    "description": "Complete 78-card Rider-Waite Tarot deck with upright and reversed meanings",
+    "total_cards": 78,
+    "major_arcana_count": 22,
+    "minor_arcana_count": 56
+  },
+  "cards": [
+    {
+      "id": "the_fool",
+      "name": "The Fool",
+      "arcana": "major",
+      "number": 0,
+      "element": "Air",
+      "astrology": "Uranus",
+      "keywords": [
+        "new beginnings",
+        "innocence",
+        "spontaneity",
+        "faith",
+        "adventure"
+      ],
+      "polarity": 0.2,
+      "intensity": 0.6,
+      "upright_meaning": "The Fool represents new beginnings, innocence, and the pure potential of starting fresh. This card suggests taking a leap of faith, embracing spontaneity, and trusting in the journey ahead. It's about approaching life with an open heart and mind, ready for whatever adventures await.",
+      "reversed_meaning": "When reversed, The Fool warns against recklessness and poor judgment. It may indicate foolish decisions, lack of direction, or being too naive. There might be a need for more careful planning and consideration before taking action.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "new_beginnings",
+          "innocence",
+          "adventure"
+        ]
+      }
+    },
+    {
+      "id": "the_magician",
+      "name": "The Magician",
+      "arcana": "major",
+      "number": 1,
+      "element": "Air",
+      "astrology": "Mercury",
+      "keywords": [
+        "manifestation",
+        "willpower",
+        "skill",
+        "concentration",
+        "power"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.9,
+      "upright_meaning": "The Magician represents the power of manifestation and the ability to turn ideas into reality. This card signifies having all the tools and resources needed to achieve your goals. It's about focused willpower, skill, and the confidence to take action.",
+      "reversed_meaning": "Reversed, The Magician suggests manipulation, misuse of power, or lack of focus. There may be untapped potential or resources that aren't being utilized properly. It warns against using abilities for selfish purposes.",
+      "influence_rules": {
+        "adjacency_bonus": 0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "manifestation",
+          "power",
+          "skill"
+        ]
+      }
+    },
+    {
+      "id": "the_high_priestess",
+      "name": "The High Priestess",
+      "arcana": "major",
+      "number": 2,
+      "element": "Water",
+      "astrology": "Moon",
+      "keywords": [
+        "intuition",
+        "mystery",
+        "subconscious",
+        "wisdom",
+        "secrets"
+      ],
+      "polarity": 0.0,
+      "intensity": 0.7,
+      "upright_meaning": "The High Priestess represents intuition, inner wisdom, and the mysteries of the subconscious mind. This card suggests trusting your instincts and looking within for answers. It's about accessing hidden knowledge and understanding the deeper truths.",
+      "reversed_meaning": "Reversed, The High Priestess indicates ignoring intuition or being disconnected from inner wisdom. There may be secrets being kept or a lack of self-awareness. It suggests the need to listen more carefully to your inner voice.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "intuition",
+          "mystery",
+          "wisdom"
+        ]
+      }
+    },
+    {
+      "id": "the_empress",
+      "name": "The Empress",
+      "arcana": "major",
+      "number": 3,
+      "element": "Earth",
+      "astrology": "Venus",
+      "keywords": [
+        "fertility",
+        "abundance",
+        "nature",
+        "creativity",
+        "nurturing"
+      ],
+      "polarity": 0.9,
+      "intensity": 0.8,
+      "upright_meaning": "The Empress represents fertility, abundance, and the nurturing aspects of life. This card signifies creativity, growth, and the flourishing of ideas or projects. It's about embracing the natural flow of life and nurturing what you care about.",
+      "reversed_meaning": "Reversed, The Empress suggests creative blocks, overindulgence, or neglect of nurturing aspects. There may be issues with fertility or abundance, or a need to reconnect with nature and creativity.",
+      "influence_rules": {
+        "adjacency_bonus": 0.4,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "fertility",
+          "abundance",
+          "creativity"
+        ]
+      }
+    },
+    {
+      "id": "the_emperor",
+      "name": "The Emperor",
+      "arcana": "major",
+      "number": 4,
+      "element": "Fire",
+      "astrology": "Aries",
+      "keywords": [
+        "authority",
+        "structure",
+        "leadership",
+        "stability",
+        "control"
+      ],
+      "polarity": 0.7,
+      "intensity": 0.9,
+      "upright_meaning": "The Emperor represents authority, structure, and leadership. This card signifies the need for order, discipline, and taking control of situations. It's about establishing boundaries and creating a solid foundation for success.",
+      "reversed_meaning": "Reversed, The Emperor suggests abuse of power, rigidity, or lack of structure. There may be authoritarian behavior or a need to be more flexible in leadership approaches.",
+      "influence_rules": {
+        "adjacency_bonus": 0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "authority",
+          "structure",
+          "leadership"
+        ]
+      }
+    },
+    {
+      "id": "the_hierophant",
+      "name": "The Hierophant",
+      "arcana": "major",
+      "number": 5,
+      "element": "Earth",
+      "astrology": "Taurus",
+      "keywords": [
+        "tradition",
+        "spirituality",
+        "education",
+        "conformity",
+        "guidance"
+      ],
+      "polarity": 0.3,
+      "intensity": 0.6,
+      "upright_meaning": "The Hierophant represents tradition, spiritual guidance, and conventional wisdom. This card suggests following established paths, seeking education, and learning from mentors or institutions. It's about finding meaning through structured belief systems.",
+      "reversed_meaning": "Reversed, The Hierophant indicates rebellion against tradition or unconventional approaches. There may be a need to break free from restrictive beliefs or find your own spiritual path.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "tradition",
+          "spirituality",
+          "education"
+        ]
+      }
+    },
+    {
+      "id": "the_lovers",
+      "name": "The Lovers",
+      "arcana": "major",
+      "number": 6,
+      "element": "Air",
+      "astrology": "Gemini",
+      "keywords": [
+        "love",
+        "relationships",
+        "choices",
+        "harmony",
+        "unity"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8,
+      "upright_meaning": "The Lovers represent love, relationships, and important choices. This card signifies harmony, unity, and the power of love to bring people together. It's about making decisions from the heart and choosing love over fear.",
+      "reversed_meaning": "Reversed, The Lovers suggest disharmony, difficult choices, or relationship challenges. There may be conflicts in relationships or the need to make difficult decisions about love and commitment.",
+      "influence_rules": {
+        "adjacency_bonus": 0.4,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "love",
+          "relationships",
+          "choices"
+        ]
+      }
+    },
+    {
+      "id": "the_chariot",
+      "name": "The Chariot",
+      "arcana": "major",
+      "number": 7,
+      "element": "Water",
+      "astrology": "Cancer",
+      "keywords": [
+        "determination",
+        "control",
+        "victory",
+        "willpower",
+        "direction"
+      ],
+      "polarity": 0.6,
+      "intensity": 0.9,
+      "upright_meaning": "The Chariot represents determination, control, and the drive to achieve victory. This card signifies strong willpower and the ability to overcome obstacles through focused determination. It's about taking control of your direction and moving forward with purpose.",
+      "reversed_meaning": "Reversed, The Chariot suggests lack of direction, control issues, or giving up too easily. There may be internal conflicts or the need to find better balance in pursuing goals.",
+      "influence_rules": {
+        "adjacency_bonus": 0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "determination",
+          "control",
+          "victory"
+        ]
+      }
+    },
+    {
+      "id": "strength",
+      "name": "Strength",
+      "arcana": "major",
+      "number": 8,
+      "element": "Fire",
+      "astrology": "Leo",
+      "keywords": [
+        "inner strength",
+        "courage",
+        "patience",
+        "compassion",
+        "self-control"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8,
+      "upright_meaning": "Strength represents inner strength, courage, and the power of gentle control. This card signifies the ability to overcome challenges through patience, compassion, and self-control rather than brute force. It's about finding strength within yourself.",
+      "reversed_meaning": "Reversed, Strength suggests inner weakness, lack of confidence, or giving up too easily. There may be a need to develop more self-control or find healthier ways to deal with challenges.",
+      "influence_rules": {
+        "adjacency_bonus": 0.4,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "inner_strength",
+          "courage",
+          "patience"
+        ]
+      }
+    },
+    {
+      "id": "the_hermit",
+      "name": "The Hermit",
+      "arcana": "major",
+      "number": 9,
+      "element": "Earth",
+      "astrology": "Virgo",
+      "keywords": [
+        "introspection",
+        "guidance",
+        "wisdom",
+        "solitude",
+        "searching"
+      ],
+      "polarity": 0.1,
+      "intensity": 0.7,
+      "upright_meaning": "The Hermit represents introspection, inner guidance, and the search for wisdom. This card suggests taking time for self-reflection and seeking answers within. It's about finding your own path and trusting your inner light.",
+      "reversed_meaning": "Reversed, The Hermit indicates isolation, loneliness, or being lost in your search. There may be a need to seek guidance from others or to come out of isolation.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "introspection",
+          "guidance",
+          "wisdom"
+        ]
+      }
+    },
+    {
+      "id": "wheel_of_fortune",
+      "name": "Wheel of Fortune",
+      "arcana": "major",
+      "number": 10,
+      "element": "Fire",
+      "astrology": "Jupiter",
+      "keywords": [
+        "change",
+        "cycles",
+        "luck",
+        "destiny",
+        "karma"
+      ],
+      "polarity": 0.0,
+      "intensity": 0.8,
+      "upright_meaning": "The Wheel of Fortune represents change, cycles, and the turning of fate. This card signifies that change is coming and that luck is on your side. It's about embracing the natural cycles of life and trusting in destiny.",
+      "reversed_meaning": "Reversed, The Wheel suggests resistance to change, bad luck, or being stuck in cycles. There may be a need to break free from negative patterns or to accept necessary changes.",
+      "influence_rules": {
+        "adjacency_bonus": 0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "change",
+          "cycles",
+          "luck"
+        ]
+      }
+    },
+    {
+      "id": "justice",
+      "name": "Justice",
+      "arcana": "major",
+      "number": 11,
+      "element": "Air",
+      "astrology": "Libra",
+      "keywords": [
+        "justice",
+        "balance",
+        "fairness",
+        "truth",
+        "karma"
+      ],
+      "polarity": 0.5,
+      "intensity": 0.8,
+      "upright_meaning": "Justice represents fairness, balance, and the truth coming to light. This card signifies that justice will be served and that balance will be restored. It's about making fair decisions and taking responsibility for your actions.",
+      "reversed_meaning": "Reversed, Justice suggests unfairness, imbalance, or injustice. There may be a need to seek justice or to restore balance in your life.",
+      "influence_rules": {
+        "adjacency_bonus": 0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "justice",
+          "balance",
+          "fairness"
+        ]
+      }
+    },
+    {
+      "id": "the_hanged_man",
+      "name": "The Hanged Man",
+      "arcana": "major",
+      "number": 12,
+      "element": "Water",
+      "astrology": "Neptune",
+      "keywords": [
+        "sacrifice",
+        "surrender",
+        "patience",
+        "perspective",
+        "letting go"
+      ],
+      "polarity": -0.2,
+      "intensity": 0.6,
+      "upright_meaning": "The Hanged Man represents sacrifice, surrender, and gaining new perspective. This card suggests that sometimes you need to let go of control and see things from a different angle. It's about patience and trusting the process.",
+      "reversed_meaning": "Reversed, The Hanged Man indicates resistance to necessary sacrifice or being stuck in a situation. There may be a need to let go of something that's no longer serving you.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "sacrifice",
+          "surrender",
+          "patience"
+        ]
+      }
+    },
+    {
+      "id": "death",
+      "name": "Death",
+      "arcana": "major",
+      "number": 13,
+      "element": "Water",
+      "astrology": "Scorpio",
+      "keywords": [
+        "transformation",
+        "endings",
+        "change",
+        "rebirth",
+        "letting go"
+      ],
+      "polarity": -0.1,
+      "intensity": 0.9,
+      "upright_meaning": "Death represents transformation, endings, and new beginnings. This card signifies that something in your life is coming to an end to make way for something new. It's about embracing change and transformation.",
+      "reversed_meaning": "Reversed, Death suggests resistance to change or being stuck in the past. There may be a need to let go of something that's holding you back from transformation.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "transformation",
+          "endings",
+          "change"
+        ]
+      }
+    },
+    {
+      "id": "temperance",
+      "name": "Temperance",
+      "arcana": "major",
+      "number": 14,
+      "element": "Fire",
+      "astrology": "Sagittarius",
+      "keywords": [
+        "balance",
+        "moderation",
+        "patience",
+        "harmony",
+        "healing"
+      ],
+      "polarity": 0.6,
+      "intensity": 0.7,
+      "upright_meaning": "Temperance represents balance, moderation, and patience. This card signifies the need to find balance in all areas of life and to practice moderation. It's about healing through patience and finding harmony.",
+      "reversed_meaning": "Reversed, Temperance suggests imbalance, excess, or lack of patience. There may be a need to find better balance or to practice more moderation in your life.",
+      "influence_rules": {
+        "adjacency_bonus": 0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "balance",
+          "moderation",
+          "patience"
+        ]
+      }
+    },
+    {
+      "id": "the_devil",
+      "name": "The Devil",
+      "arcana": "major",
+      "number": 15,
+      "element": "Earth",
+      "astrology": "Capricorn",
+      "keywords": [
+        "temptation",
+        "bondage",
+        "materialism",
+        "addiction",
+        "shadow self"
+      ],
+      "polarity": -0.8,
+      "intensity": 0.9,
+      "upright_meaning": "The Devil represents temptation, bondage, and the shadow aspects of human nature. This card suggests being trapped by material desires, addictions, or negative patterns. It's about recognizing and breaking free from limiting beliefs.",
+      "reversed_meaning": "Reversed, The Devil indicates breaking free from bondage or overcoming addictions. There may be liberation from limiting beliefs or the recognition of your own power to change.",
+      "influence_rules": {
+        "adjacency_bonus": -0.3,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "temptation",
+          "bondage",
+          "materialism"
+        ]
+      }
+    },
+    {
+      "id": "the_tower",
+      "name": "The Tower",
+      "arcana": "major",
+      "number": 16,
+      "element": "Fire",
+      "astrology": "Mars",
+      "keywords": [
+        "sudden change",
+        "revelation",
+        "disruption",
+        "breakthrough",
+        "awakening"
+      ],
+      "polarity": -0.6,
+      "intensity": 1.0,
+      "upright_meaning": "The Tower represents sudden change, revelation, and the breaking down of false structures. This card signifies a major breakthrough or awakening that may be disruptive but ultimately liberating. It's about truth being revealed and old foundations being destroyed.",
+      "reversed_meaning": "Reversed, The Tower suggests avoiding necessary change or being in denial about a situation. There may be a need to accept that change is coming and to prepare for it.",
+      "influence_rules": {
+        "adjacency_bonus": -0.4,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "sudden_change",
+          "revelation",
+          "disruption"
+        ]
+      }
+    },
+    {
+      "id": "the_star",
+      "name": "The Star",
+      "arcana": "major",
+      "number": 17,
+      "element": "Air",
+      "astrology": "Aquarius",
+      "keywords": [
+        "hope",
+        "inspiration",
+        "guidance",
+        "healing",
+        "renewal"
+      ],
+      "polarity": 0.9,
+      "intensity": 0.8,
+      "upright_meaning": "The Star represents hope, inspiration, and guidance from above. This card signifies healing, renewal, and the promise of better times ahead. It's about having faith in the future and trusting in divine guidance.",
+      "reversed_meaning": "Reversed, The Star suggests loss of hope, despair, or lack of faith. There may be a need to reconnect with your inner light and to have more faith in the future.",
+      "influence_rules": {
+        "adjacency_bonus": 0.5,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "hope",
+          "inspiration",
+          "guidance"
+        ]
+      }
+    },
+    {
+      "id": "the_moon",
+      "name": "The Moon",
+      "arcana": "major",
+      "number": 18,
+      "element": "Water",
+      "astrology": "Pisces",
+      "keywords": [
+        "illusion",
+        "intuition",
+        "fear",
+        "subconscious",
+        "mystery"
+      ],
+      "polarity": -0.3,
+      "intensity": 0.7,
+      "upright_meaning": "The Moon represents illusion, intuition, and the mysteries of the subconscious. This card suggests that things may not be as they appear and that you need to trust your intuition. It's about navigating through uncertainty and illusion.",
+      "reversed_meaning": "Reversed, The Moon indicates clarity, truth being revealed, or overcoming fears. There may be a breakthrough in understanding or the resolution of confusing situations.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "illusion",
+          "intuition",
+          "fear"
+        ]
+      }
+    },
+    {
+      "id": "the_sun",
+      "name": "The Sun",
+      "arcana": "major",
+      "number": 19,
+      "element": "Fire",
+      "astrology": "Sun",
+      "keywords": [
+        "joy",
+        "success",
+        "vitality",
+        "optimism",
+        "achievement"
+      ],
+      "polarity": 1.0,
+      "intensity": 0.9,
+      "upright_meaning": "The Sun represents joy, success, and vitality. This card signifies achievement, optimism, and the fulfillment of goals. It's about basking in success and enjoying the positive energy of life.",
+      "reversed_meaning": "Reversed, The Sun suggests temporary setbacks, overconfidence, or blocked success. There may be delays in achieving goals or the need to be more realistic about expectations.",
+      "influence_rules": {
+        "adjacency_bonus": 0.6,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "joy",
+          "success",
+          "vitality"
+        ]
+      }
+    },
+    {
+      "id": "judgement",
+      "name": "Judgement",
+      "arcana": "major",
+      "number": 20,
+      "element": "Fire",
+      "astrology": "Pluto",
+      "keywords": [
+        "rebirth",
+        "awakening",
+        "forgiveness",
+        "redemption",
+        "calling"
+      ],
+      "polarity": 0.7,
+      "intensity": 0.8,
+      "upright_meaning": "Judgement represents rebirth, awakening, and the call to a higher purpose. This card signifies forgiveness, redemption, and the opportunity for a fresh start. It's about answering your calling and embracing transformation.",
+      "reversed_meaning": "Reversed, Judgement suggests self-doubt, lack of forgiveness, or ignoring your calling. There may be a need to forgive yourself or others and to listen to your inner voice.",
+      "influence_rules": {
+        "adjacency_bonus": 0.4,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "rebirth",
+          "awakening",
+          "forgiveness"
+        ]
+      }
+    },
+    {
+      "id": "the_world",
+      "name": "The World",
+      "arcana": "major",
+      "number": 21,
+      "element": "Earth",
+      "astrology": "Saturn",
+      "keywords": [
+        "completion",
+        "achievement",
+        "success",
+        "wholeness",
+        "accomplishment"
+      ],
+      "polarity": 0.9,
+      "intensity": 0.9,
+      "upright_meaning": "The World represents completion, achievement, and success. This card signifies the successful completion of a major life cycle and the achievement of your goals. It's about wholeness, accomplishment, and the fulfillment of your potential.",
+      "reversed_meaning": "Reversed, The World suggests incomplete projects, lack of closure, or unfinished business. There may be a need to complete what you've started or to find closure in some area of your life.",
+      "influence_rules": {
+        "adjacency_bonus": 0.5,
+        "major_arcana_multiplier": 1.5,
+        "themes": [
+          "completion",
+          "achievement",
+          "success"
+        ]
+      }
+    },
+    {
+      "id": "ace_of_wands",
+      "name": "Ace of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 1,
+      "element": "Fire",
+      "keywords": [
+        "inspiration",
+        "new beginnings",
+        "creativity",
+        "passion"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.9,
+      "upright_meaning": "The Ace of Wands represents inspiration, new beginnings. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Ace of Wands suggests challenges with inspiration, new beginnings. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "inspiration",
+          "new beginnings",
+          "creativity"
+        ]
+      }
+    },
+    {
+      "id": "two_of_wands",
+      "name": "Two of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 2,
+      "element": "Fire",
+      "keywords": [
+        "planning",
+        "future",
+        "personal power",
+        "ambition"
+      ],
+      "polarity": 0.6,
+      "intensity": 0.9,
+      "upright_meaning": "The Two of Wands represents planning, future. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Two of Wands suggests challenges with planning, future. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "planning",
+          "future",
+          "personal power"
+        ]
+      }
+    },
+    {
+      "id": "three_of_wands",
+      "name": "Three of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 3,
+      "element": "Fire",
+      "keywords": [
+        "expansion",
+        "foresight",
+        "leadership",
+        "progress"
+      ],
+      "polarity": 0.7,
+      "intensity": 0.9,
+      "upright_meaning": "The Three of Wands represents expansion, foresight. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Three of Wands suggests challenges with expansion, foresight. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "expansion",
+          "foresight",
+          "leadership"
+        ]
+      }
+    },
+    {
+      "id": "four_of_wands",
+      "name": "Four of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 4,
+      "element": "Fire",
+      "keywords": [
+        "celebration",
+        "harmony",
+        "home",
+        "community"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.9,
+      "upright_meaning": "The Four of Wands represents celebration, harmony. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Four of Wands suggests challenges with celebration, harmony. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "celebration",
+          "harmony",
+          "home"
+        ]
+      }
+    },
+    {
+      "id": "five_of_wands",
+      "name": "Five of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 5,
+      "element": "Fire",
+      "keywords": [
+        "conflict",
+        "competition",
+        "disagreement",
+        "challenge"
+      ],
+      "polarity": -0.3,
+      "intensity": 0.9,
+      "upright_meaning": "The Five of Wands represents conflict, competition. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Five of Wands suggests challenges with conflict, competition. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "conflict",
+          "competition",
+          "disagreement"
+        ]
+      }
+    },
+    {
+      "id": "six_of_wands",
+      "name": "Six of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 6,
+      "element": "Fire",
+      "keywords": [
+        "victory",
+        "success",
+        "recognition",
+        "leadership"
+      ],
+      "polarity": 0.9,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Six of Wands represents victory, success. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Six of Wands suggests challenges with victory, success. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "victory",
+          "success",
+          "recognition"
+        ]
+      }
+    },
+    {
+      "id": "seven_of_wands",
+      "name": "Seven of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 7,
+      "element": "Fire",
+      "keywords": [
+        "challenge",
+        "competition",
+        "defending",
+        "perseverance"
+      ],
+      "polarity": 0.2,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Seven of Wands represents challenge, competition. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Seven of Wands suggests challenges with challenge, competition. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "challenge",
+          "competition",
+          "defending"
+        ]
+      }
+    },
+    {
+      "id": "eight_of_wands",
+      "name": "Eight of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 8,
+      "element": "Fire",
+      "keywords": [
+        "speed",
+        "action",
+        "rapid change",
+        "progress"
+      ],
+      "polarity": 0.5,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Eight of Wands represents speed, action. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Eight of Wands suggests challenges with speed, action. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "speed",
+          "action",
+          "rapid change"
+        ]
+      }
+    },
+    {
+      "id": "nine_of_wands",
+      "name": "Nine of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 9,
+      "element": "Fire",
+      "keywords": [
+        "resilience",
+        "perseverance",
+        "defense",
+        "strength"
+      ],
+      "polarity": 0.3,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Nine of Wands represents resilience, perseverance. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Nine of Wands suggests challenges with resilience, perseverance. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "resilience",
+          "perseverance",
+          "defense"
+        ]
+      }
+    },
+    {
+      "id": "ten_of_wands",
+      "name": "Ten of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 10,
+      "element": "Fire",
+      "keywords": [
+        "burden",
+        "responsibility",
+        "overload",
+        "hard work"
+      ],
+      "polarity": -0.4,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Ten of Wands represents burden, responsibility. This card signifies creativity, passion, action, inspiration and the energy of Fire. It's about finding balance and understanding in matters of creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Ten of Wands suggests challenges with burden, responsibility. There may be obstacles or difficulties in matters of creativity, passion, action, inspiration that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "burden",
+          "responsibility",
+          "overload"
+        ]
+      }
+    },
+    {
+      "id": "page_of_wands",
+      "name": "Page of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 11,
+      "element": "Fire",
+      "keywords": [
+        "burden",
+        "responsibility",
+        "overload",
+        "hard work"
+      ],
+      "polarity": -0.4,
+      "intensity": 1.0,
+      "upright_meaning": "The Page of Wands represents burden, responsibility. This card signifies the page energy in matters of creativity, passion, action, inspiration. It's about embracing the page qualities in your approach to creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Page of Wands suggests challenges with burden, responsibility. There may be a need to develop more page qualities or to approach creativity, passion, action, inspiration differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "burden",
+          "responsibility",
+          "overload"
+        ]
+      }
+    },
+    {
+      "id": "knight_of_wands",
+      "name": "Knight of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 12,
+      "element": "Fire",
+      "keywords": [
+        "burden",
+        "responsibility",
+        "overload",
+        "hard work"
+      ],
+      "polarity": -0.4,
+      "intensity": 1.0,
+      "upright_meaning": "The Knight of Wands represents burden, responsibility. This card signifies the knight energy in matters of creativity, passion, action, inspiration. It's about embracing the knight qualities in your approach to creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Knight of Wands suggests challenges with burden, responsibility. There may be a need to develop more knight qualities or to approach creativity, passion, action, inspiration differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "burden",
+          "responsibility",
+          "overload"
+        ]
+      }
+    },
+    {
+      "id": "queen_of_wands",
+      "name": "Queen of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 13,
+      "element": "Fire",
+      "keywords": [
+        "burden",
+        "responsibility",
+        "overload",
+        "hard work"
+      ],
+      "polarity": -0.4,
+      "intensity": 1.0,
+      "upright_meaning": "The Queen of Wands represents burden, responsibility. This card signifies the queen energy in matters of creativity, passion, action, inspiration. It's about embracing the queen qualities in your approach to creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the Queen of Wands suggests challenges with burden, responsibility. There may be a need to develop more queen qualities or to approach creativity, passion, action, inspiration differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "burden",
+          "responsibility",
+          "overload"
+        ]
+      }
+    },
+    {
+      "id": "king_of_wands",
+      "name": "King of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 14,
+      "element": "Fire",
+      "keywords": [
+        "burden",
+        "responsibility",
+        "overload",
+        "hard work"
+      ],
+      "polarity": -0.4,
+      "intensity": 1.0,
+      "upright_meaning": "The King of Wands represents burden, responsibility. This card signifies the king energy in matters of creativity, passion, action, inspiration. It's about embracing the king qualities in your approach to creativity, passion, action, inspiration.",
+      "reversed_meaning": "Reversed, the King of Wands suggests challenges with burden, responsibility. There may be a need to develop more king qualities or to approach creativity, passion, action, inspiration differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.0,
+          "wands": 0.1
+        },
+        "themes": [
+          "burden",
+          "responsibility",
+          "overload"
+        ]
+      }
+    },
+    {
+      "id": "ace_of_cups",
+      "name": "Ace of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 1,
+      "element": "Water",
+      "keywords": [
+        "new love",
+        "emotional beginnings",
+        "intuition",
+        "spirituality"
+      ],
+      "polarity": 0.7,
+      "intensity": 0.7,
+      "upright_meaning": "The Ace of Cups represents new love, emotional beginnings. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Ace of Cups suggests challenges with new love, emotional beginnings. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "new love",
+          "emotional beginnings",
+          "intuition"
+        ]
+      }
+    },
+    {
+      "id": "two_of_cups",
+      "name": "Two of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 2,
+      "element": "Water",
+      "keywords": [
+        "partnership",
+        "balance",
+        "harmony",
+        "choices"
+      ],
+      "polarity": 0.6,
+      "intensity": 0.7,
+      "upright_meaning": "The Two of Cups represents partnership, balance. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Two of Cups suggests challenges with partnership, balance. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "partnership",
+          "balance",
+          "harmony"
+        ]
+      }
+    },
+    {
+      "id": "three_of_cups",
+      "name": "Three of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 3,
+      "element": "Water",
+      "keywords": [
+        "celebration",
+        "friendship",
+        "community",
+        "joy"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.7,
+      "upright_meaning": "The Three of Cups represents celebration, friendship. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Three of Cups suggests challenges with celebration, friendship. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "celebration",
+          "friendship",
+          "community"
+        ]
+      }
+    },
+    {
+      "id": "four_of_cups",
+      "name": "Four of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 4,
+      "element": "Water",
+      "keywords": [
+        "apathy",
+        "disconnection",
+        "boredom",
+        "stagnation"
+      ],
+      "polarity": -0.4,
+      "intensity": 0.7,
+      "upright_meaning": "The Four of Cups represents apathy, disconnection. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Four of Cups suggests challenges with apathy, disconnection. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "apathy",
+          "disconnection",
+          "boredom"
+        ]
+      }
+    },
+    {
+      "id": "five_of_cups",
+      "name": "Five of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 5,
+      "element": "Water",
+      "keywords": [
+        "loss",
+        "grief",
+        "disappointment",
+        "regret"
+      ],
+      "polarity": -0.6,
+      "intensity": 0.7,
+      "upright_meaning": "The Five of Cups represents loss, grief. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Five of Cups suggests challenges with loss, grief. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "loss",
+          "grief",
+          "disappointment"
+        ]
+      }
+    },
+    {
+      "id": "six_of_cups",
+      "name": "Six of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 6,
+      "element": "Water",
+      "keywords": [
+        "nostalgia",
+        "memories",
+        "childhood",
+        "innocence"
+      ],
+      "polarity": 0.4,
+      "intensity": 0.5,
+      "upright_meaning": "The Six of Cups represents nostalgia, memories. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Six of Cups suggests challenges with nostalgia, memories. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "nostalgia",
+          "memories",
+          "childhood"
+        ]
+      }
+    },
+    {
+      "id": "seven_of_cups",
+      "name": "Seven of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 7,
+      "element": "Water",
+      "keywords": [
+        "choices",
+        "illusion",
+        "fantasy",
+        "wishful thinking"
+      ],
+      "polarity": -0.2,
+      "intensity": 0.5,
+      "upright_meaning": "The Seven of Cups represents choices, illusion. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Seven of Cups suggests challenges with choices, illusion. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "choices",
+          "illusion",
+          "fantasy"
+        ]
+      }
+    },
+    {
+      "id": "eight_of_cups",
+      "name": "Eight of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 8,
+      "element": "Water",
+      "keywords": [
+        "abandonment",
+        "withdrawal",
+        "disappointment",
+        "escape"
+      ],
+      "polarity": -0.5,
+      "intensity": 0.5,
+      "upright_meaning": "The Eight of Cups represents abandonment, withdrawal. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Eight of Cups suggests challenges with abandonment, withdrawal. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "abandonment",
+          "withdrawal",
+          "disappointment"
+        ]
+      }
+    },
+    {
+      "id": "nine_of_cups",
+      "name": "Nine of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 9,
+      "element": "Water",
+      "keywords": [
+        "satisfaction",
+        "contentment",
+        "gratitude",
+        "fulfillment"
+      ],
+      "polarity": 0.9,
+      "intensity": 0.5,
+      "upright_meaning": "The Nine of Cups represents satisfaction, contentment. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Nine of Cups suggests challenges with satisfaction, contentment. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "satisfaction",
+          "contentment",
+          "gratitude"
+        ]
+      }
+    },
+    {
+      "id": "ten_of_cups",
+      "name": "Ten of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 10,
+      "element": "Water",
+      "keywords": [
+        "happiness",
+        "fulfillment",
+        "joy",
+        "family"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.5,
+      "upright_meaning": "The Ten of Cups represents happiness, fulfillment. This card signifies emotions, relationships, intuition and the energy of Water. It's about finding balance and understanding in matters of emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Ten of Cups suggests challenges with happiness, fulfillment. There may be obstacles or difficulties in matters of emotions, relationships, intuition that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "happiness",
+          "fulfillment",
+          "joy"
+        ]
+      }
+    },
+    {
+      "id": "page_of_cups",
+      "name": "Page of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 11,
+      "element": "Water",
+      "keywords": [
+        "happiness",
+        "fulfillment",
+        "joy",
+        "family"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8,
+      "upright_meaning": "The Page of Cups represents happiness, fulfillment. This card signifies the page energy in matters of emotions, relationships, intuition. It's about embracing the page qualities in your approach to emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Page of Cups suggests challenges with happiness, fulfillment. There may be a need to develop more page qualities or to approach emotions, relationships, intuition differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "happiness",
+          "fulfillment",
+          "joy"
+        ]
+      }
+    },
+    {
+      "id": "knight_of_cups",
+      "name": "Knight of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 12,
+      "element": "Water",
+      "keywords": [
+        "happiness",
+        "fulfillment",
+        "joy",
+        "family"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8,
+      "upright_meaning": "The Knight of Cups represents happiness, fulfillment. This card signifies the knight energy in matters of emotions, relationships, intuition. It's about embracing the knight qualities in your approach to emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Knight of Cups suggests challenges with happiness, fulfillment. There may be a need to develop more knight qualities or to approach emotions, relationships, intuition differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "happiness",
+          "fulfillment",
+          "joy"
+        ]
+      }
+    },
+    {
+      "id": "queen_of_cups",
+      "name": "Queen of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 13,
+      "element": "Water",
+      "keywords": [
+        "happiness",
+        "fulfillment",
+        "joy",
+        "family"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8,
+      "upright_meaning": "The Queen of Cups represents happiness, fulfillment. This card signifies the queen energy in matters of emotions, relationships, intuition. It's about embracing the queen qualities in your approach to emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the Queen of Cups suggests challenges with happiness, fulfillment. There may be a need to develop more queen qualities or to approach emotions, relationships, intuition differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "happiness",
+          "fulfillment",
+          "joy"
+        ]
+      }
+    },
+    {
+      "id": "king_of_cups",
+      "name": "King of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 14,
+      "element": "Water",
+      "keywords": [
+        "happiness",
+        "fulfillment",
+        "joy",
+        "family"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8,
+      "upright_meaning": "The King of Cups represents happiness, fulfillment. This card signifies the king energy in matters of emotions, relationships, intuition. It's about embracing the king qualities in your approach to emotions, relationships, intuition.",
+      "reversed_meaning": "Reversed, the King of Cups suggests challenges with happiness, fulfillment. There may be a need to develop more king qualities or to approach emotions, relationships, intuition differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.1,
+          "swords": -0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "happiness",
+          "fulfillment",
+          "joy"
+        ]
+      }
+    },
+    {
+      "id": "ace_of_swords",
+      "name": "Ace of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 1,
+      "element": "Air",
+      "keywords": [
+        "new ideas",
+        "mental clarity",
+        "breakthrough",
+        "truth"
+      ],
+      "polarity": 0.5,
+      "intensity": 0.9,
+      "upright_meaning": "The Ace of Swords represents new ideas, mental clarity. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Ace of Swords suggests challenges with new ideas, mental clarity. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "new ideas",
+          "mental clarity",
+          "breakthrough"
+        ]
+      }
+    },
+    {
+      "id": "two_of_swords",
+      "name": "Two of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 2,
+      "element": "Air",
+      "keywords": [
+        "difficult choices",
+        "indecision",
+        "balance",
+        "conflict"
+      ],
+      "polarity": -0.3,
+      "intensity": 0.9,
+      "upright_meaning": "The Two of Swords represents difficult choices, indecision. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Two of Swords suggests challenges with difficult choices, indecision. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "difficult choices",
+          "indecision",
+          "balance"
+        ]
+      }
+    },
+    {
+      "id": "three_of_swords",
+      "name": "Three of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 3,
+      "element": "Air",
+      "keywords": [
+        "heartbreak",
+        "sorrow",
+        "betrayal",
+        "pain"
+      ],
+      "polarity": -0.7,
+      "intensity": 0.9,
+      "upright_meaning": "The Three of Swords represents heartbreak, sorrow. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Three of Swords suggests challenges with heartbreak, sorrow. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "heartbreak",
+          "sorrow",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "four_of_swords",
+      "name": "Four of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 4,
+      "element": "Air",
+      "keywords": [
+        "rest",
+        "contemplation",
+        "recovery",
+        "peace"
+      ],
+      "polarity": 0.2,
+      "intensity": 0.9,
+      "upright_meaning": "The Four of Swords represents rest, contemplation. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Four of Swords suggests challenges with rest, contemplation. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "rest",
+          "contemplation",
+          "recovery"
+        ]
+      }
+    },
+    {
+      "id": "five_of_swords",
+      "name": "Five of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 5,
+      "element": "Air",
+      "keywords": [
+        "conflict",
+        "defeat",
+        "betrayal",
+        "loss"
+      ],
+      "polarity": -0.6,
+      "intensity": 0.9,
+      "upright_meaning": "The Five of Swords represents conflict, defeat. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Five of Swords suggests challenges with conflict, defeat. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "conflict",
+          "defeat",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "six_of_swords",
+      "name": "Six of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 6,
+      "element": "Air",
+      "keywords": [
+        "transition",
+        "change",
+        "moving on",
+        "release"
+      ],
+      "polarity": 0.1,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Six of Swords represents transition, change. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Six of Swords suggests challenges with transition, change. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "transition",
+          "change",
+          "moving on"
+        ]
+      }
+    },
+    {
+      "id": "seven_of_swords",
+      "name": "Seven of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 7,
+      "element": "Air",
+      "keywords": [
+        "deception",
+        "betrayal",
+        "theft",
+        "dishonesty"
+      ],
+      "polarity": -0.8,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Seven of Swords represents deception, betrayal. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Seven of Swords suggests challenges with deception, betrayal. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "deception",
+          "betrayal",
+          "theft"
+        ]
+      }
+    },
+    {
+      "id": "eight_of_swords",
+      "name": "Eight of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 8,
+      "element": "Air",
+      "keywords": [
+        "restriction",
+        "imprisonment",
+        "self-imposed limits",
+        "trapped"
+      ],
+      "polarity": -0.7,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Eight of Swords represents restriction, imprisonment. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Eight of Swords suggests challenges with restriction, imprisonment. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "restriction",
+          "imprisonment",
+          "self-imposed limits"
+        ]
+      }
+    },
+    {
+      "id": "nine_of_swords",
+      "name": "Nine of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 9,
+      "element": "Air",
+      "keywords": [
+        "anxiety",
+        "worry",
+        "fear",
+        "nightmares"
+      ],
+      "polarity": -0.9,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Nine of Swords represents anxiety, worry. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Nine of Swords suggests challenges with anxiety, worry. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "anxiety",
+          "worry",
+          "fear"
+        ]
+      }
+    },
+    {
+      "id": "ten_of_swords",
+      "name": "Ten of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 10,
+      "element": "Air",
+      "keywords": [
+        "rock bottom",
+        "failure",
+        "betrayal",
+        "endings"
+      ],
+      "polarity": -1.0,
+      "intensity": 0.7000000000000001,
+      "upright_meaning": "The Ten of Swords represents rock bottom, failure. This card signifies thoughts, communication, conflict and the energy of Air. It's about finding balance and understanding in matters of thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Ten of Swords suggests challenges with rock bottom, failure. There may be obstacles or difficulties in matters of thoughts, communication, conflict that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "rock bottom",
+          "failure",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "page_of_swords",
+      "name": "Page of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 11,
+      "element": "Air",
+      "keywords": [
+        "rock bottom",
+        "failure",
+        "betrayal",
+        "endings"
+      ],
+      "polarity": -1.0,
+      "intensity": 1.0,
+      "upright_meaning": "The Page of Swords represents rock bottom, failure. This card signifies the page energy in matters of thoughts, communication, conflict. It's about embracing the page qualities in your approach to thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Page of Swords suggests challenges with rock bottom, failure. There may be a need to develop more page qualities or to approach thoughts, communication, conflict differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "rock bottom",
+          "failure",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "knight_of_swords",
+      "name": "Knight of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 12,
+      "element": "Air",
+      "keywords": [
+        "rock bottom",
+        "failure",
+        "betrayal",
+        "endings"
+      ],
+      "polarity": -1.0,
+      "intensity": 1.0,
+      "upright_meaning": "The Knight of Swords represents rock bottom, failure. This card signifies the knight energy in matters of thoughts, communication, conflict. It's about embracing the knight qualities in your approach to thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Knight of Swords suggests challenges with rock bottom, failure. There may be a need to develop more knight qualities or to approach thoughts, communication, conflict differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "rock bottom",
+          "failure",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "queen_of_swords",
+      "name": "Queen of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 13,
+      "element": "Air",
+      "keywords": [
+        "rock bottom",
+        "failure",
+        "betrayal",
+        "endings"
+      ],
+      "polarity": -1.0,
+      "intensity": 1.0,
+      "upright_meaning": "The Queen of Swords represents rock bottom, failure. This card signifies the queen energy in matters of thoughts, communication, conflict. It's about embracing the queen qualities in your approach to thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the Queen of Swords suggests challenges with rock bottom, failure. There may be a need to develop more queen qualities or to approach thoughts, communication, conflict differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "rock bottom",
+          "failure",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "king_of_swords",
+      "name": "King of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 14,
+      "element": "Air",
+      "keywords": [
+        "rock bottom",
+        "failure",
+        "betrayal",
+        "endings"
+      ],
+      "polarity": -1.0,
+      "intensity": 1.0,
+      "upright_meaning": "The King of Swords represents rock bottom, failure. This card signifies the king energy in matters of thoughts, communication, conflict. It's about embracing the king qualities in your approach to thoughts, communication, conflict.",
+      "reversed_meaning": "Reversed, the King of Swords suggests challenges with rock bottom, failure. There may be a need to develop more king qualities or to approach thoughts, communication, conflict differently.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": -0.1,
+          "swords": 0.1,
+          "pentacles": 0.0,
+          "wands": 0.0
+        },
+        "themes": [
+          "rock bottom",
+          "failure",
+          "betrayal"
+        ]
+      }
+    },
+    {
+      "id": "ace_of_pentacles",
+      "name": "Ace of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 1,
+      "element": "Earth",
+      "keywords": [
+        "new opportunities",
+        "manifestation",
+        "abundance",
+        "potential"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.7999999999999999,
+      "upright_meaning": "The Ace of Pentacles represents new opportunities, manifestation. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Ace of Pentacles suggests challenges with new opportunities, manifestation. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "new opportunities",
+          "manifestation",
+          "abundance"
+        ]
+      }
+    },
+    {
+      "id": "two_of_pentacles",
+      "name": "Two of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 2,
+      "element": "Earth",
+      "keywords": [
+        "balance",
+        "priorities",
+        "time management",
+        "choices"
+      ],
+      "polarity": 0.3,
+      "intensity": 0.7999999999999999,
+      "upright_meaning": "The Two of Pentacles represents balance, priorities. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Two of Pentacles suggests challenges with balance, priorities. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "balance",
+          "priorities",
+          "time management"
+        ]
+      }
+    },
+    {
+      "id": "three_of_pentacles",
+      "name": "Three of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 3,
+      "element": "Earth",
+      "keywords": [
+        "teamwork",
+        "collaboration",
+        "learning",
+        "skill building"
+      ],
+      "polarity": 0.6,
+      "intensity": 0.7999999999999999,
+      "upright_meaning": "The Three of Pentacles represents teamwork, collaboration. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Three of Pentacles suggests challenges with teamwork, collaboration. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "teamwork",
+          "collaboration",
+          "learning"
+        ]
+      }
+    },
+    {
+      "id": "four_of_pentacles",
+      "name": "Four of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 4,
+      "element": "Earth",
+      "keywords": [
+        "stability",
+        "security",
+        "conservation",
+        "foundation"
+      ],
+      "polarity": 0.7,
+      "intensity": 0.7999999999999999,
+      "upright_meaning": "The Four of Pentacles represents stability, security. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Four of Pentacles suggests challenges with stability, security. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "stability",
+          "security",
+          "conservation"
+        ]
+      }
+    },
+    {
+      "id": "five_of_pentacles",
+      "name": "Five of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 5,
+      "element": "Earth",
+      "keywords": [
+        "financial loss",
+        "poverty",
+        "instability",
+        "crisis"
+      ],
+      "polarity": -0.6,
+      "intensity": 0.7999999999999999,
+      "upright_meaning": "The Five of Pentacles represents financial loss, poverty. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Five of Pentacles suggests challenges with financial loss, poverty. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": -0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "financial loss",
+          "poverty",
+          "instability"
+        ]
+      }
+    },
+    {
+      "id": "six_of_pentacles",
+      "name": "Six of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 6,
+      "element": "Earth",
+      "keywords": [
+        "generosity",
+        "charity",
+        "giving",
+        "sharing"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.6,
+      "upright_meaning": "The Six of Pentacles represents generosity, charity. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Six of Pentacles suggests challenges with generosity, charity. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "generosity",
+          "charity",
+          "giving"
+        ]
+      }
+    },
+    {
+      "id": "seven_of_pentacles",
+      "name": "Seven of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 7,
+      "element": "Earth",
+      "keywords": [
+        "hard work",
+        "perseverance",
+        "long-term goals",
+        "patience"
+      ],
+      "polarity": 0.5,
+      "intensity": 0.6,
+      "upright_meaning": "The Seven of Pentacles represents hard work, perseverance. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Seven of Pentacles suggests challenges with hard work, perseverance. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "hard work",
+          "perseverance",
+          "long-term goals"
+        ]
+      }
+    },
+    {
+      "id": "eight_of_pentacles",
+      "name": "Eight of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 8,
+      "element": "Earth",
+      "keywords": [
+        "skill development",
+        "quality",
+        "mastery",
+        "dedication"
+      ],
+      "polarity": 0.7,
+      "intensity": 0.6,
+      "upright_meaning": "The Eight of Pentacles represents skill development, quality. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Eight of Pentacles suggests challenges with skill development, quality. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "skill development",
+          "quality",
+          "mastery"
+        ]
+      }
+    },
+    {
+      "id": "nine_of_pentacles",
+      "name": "Nine of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 9,
+      "element": "Earth",
+      "keywords": [
+        "abundance",
+        "luxury",
+        "self-sufficiency",
+        "comfort"
+      ],
+      "polarity": 0.9,
+      "intensity": 0.6,
+      "upright_meaning": "The Nine of Pentacles represents abundance, luxury. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Nine of Pentacles suggests challenges with abundance, luxury. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "abundance",
+          "luxury",
+          "self-sufficiency"
+        ]
+      }
+    },
+    {
+      "id": "ten_of_pentacles",
+      "name": "Ten of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 10,
+      "element": "Earth",
+      "keywords": [
+        "wealth",
+        "legacy",
+        "family",
+        "prosperity"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.6,
+      "upright_meaning": "The Ten of Pentacles represents wealth, legacy. This card signifies material world, work, money, health and the energy of Earth. It's about finding balance and understanding in matters of material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Ten of Pentacles suggests challenges with wealth, legacy. There may be obstacles or difficulties in matters of material world, work, money, health that need to be addressed.",
+      "influence_rules": {
+        "adjacency_bonus": 0.1,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "wealth",
+          "legacy",
+          "family"
+        ]
+      }
+    },
+    {
+      "id": "page_of_pentacles",
+      "name": "Page of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 11,
+      "element": "Earth",
+      "keywords": [
+        "wealth",
+        "legacy",
+        "family",
+        "prosperity"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8999999999999999,
+      "upright_meaning": "The Page of Pentacles represents wealth, legacy. This card signifies the page energy in matters of material world, work, money, health. It's about embracing the page qualities in your approach to material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Page of Pentacles suggests challenges with wealth, legacy. There may be a need to develop more page qualities or to approach material world, work, money, health differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "wealth",
+          "legacy",
+          "family"
+        ]
+      }
+    },
+    {
+      "id": "knight_of_pentacles",
+      "name": "Knight of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 12,
+      "element": "Earth",
+      "keywords": [
+        "wealth",
+        "legacy",
+        "family",
+        "prosperity"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8999999999999999,
+      "upright_meaning": "The Knight of Pentacles represents wealth, legacy. This card signifies the knight energy in matters of material world, work, money, health. It's about embracing the knight qualities in your approach to material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Knight of Pentacles suggests challenges with wealth, legacy. There may be a need to develop more knight qualities or to approach material world, work, money, health differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "wealth",
+          "legacy",
+          "family"
+        ]
+      }
+    },
+    {
+      "id": "queen_of_pentacles",
+      "name": "Queen of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 13,
+      "element": "Earth",
+      "keywords": [
+        "wealth",
+        "legacy",
+        "family",
+        "prosperity"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8999999999999999,
+      "upright_meaning": "The Queen of Pentacles represents wealth, legacy. This card signifies the queen energy in matters of material world, work, money, health. It's about embracing the queen qualities in your approach to material world, work, money, health.",
+      "reversed_meaning": "Reversed, the Queen of Pentacles suggests challenges with wealth, legacy. There may be a need to develop more queen qualities or to approach material world, work, money, health differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "wealth",
+          "legacy",
+          "family"
+        ]
+      }
+    },
+    {
+      "id": "king_of_pentacles",
+      "name": "King of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 14,
+      "element": "Earth",
+      "keywords": [
+        "wealth",
+        "legacy",
+        "family",
+        "prosperity"
+      ],
+      "polarity": 0.8,
+      "intensity": 0.8999999999999999,
+      "upright_meaning": "The King of Pentacles represents wealth, legacy. This card signifies the king energy in matters of material world, work, money, health. It's about embracing the king qualities in your approach to material world, work, money, health.",
+      "reversed_meaning": "Reversed, the King of Pentacles suggests challenges with wealth, legacy. There may be a need to develop more king qualities or to approach material world, work, money, health differently.",
+      "influence_rules": {
+        "adjacency_bonus": 0.2,
+        "suit_interaction": {
+          "cups": 0.0,
+          "swords": 0.0,
+          "pentacles": 0.1,
+          "wands": 0.0
+        },
+        "themes": [
+          "wealth",
+          "legacy",
+          "family"
+        ]
+      }
+    }
+  ]
+}
