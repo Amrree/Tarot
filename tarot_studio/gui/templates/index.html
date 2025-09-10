@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #161b22;
+            border-right: 1px solid #30363d;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #58a6ff;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 12px 16px;
+            color: #c9d1d9;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+
+        .nav-item.active {
+            background-color: #1f6feb;
+            color: #ffffff;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            color: #c9d1d9;
+        }
+
+        .ai-status {
+            font-size: 12px;
+            color: #7d8590;
+            padding: 4px 8px;
+            background-color: #21262d;
+            border-radius: 4px;
+            border: 1px solid #30363d;
+        }
+
+        .ai-status.online {
+            color: #3fb950;
+            border-color: #3fb950;
+        }
+
+        .ai-status.offline {
+            color: #f85149;
+            border-color: #f85149;
+        }
+
+        .content {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        /* View Styles */
+        .view {
+            display: none;
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        /* Card Display */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+
+        .card.selected {
+            border-color: #1f6feb;
+            background-color: #1f6feb20;
+        }
+
+        .card-name {
+            font-weight: bold;
+            color: #58a6ff;
+            margin-bottom: 8px;
+        }
+
+        .card-keywords {
+            font-size: 12px;
+            color: #7d8590;
+            margin-bottom: 8px;
+        }
+
+        .card-meaning {
+            font-size: 12px;
+            color: #c9d1d9;
+            line-height: 1.4;
+        }
+
+        /* Spread Display */
+        .spread-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 24px 0;
+        }
+
+        .spread-title {
+            font-size: 18px;
+            color: #58a6ff;
+            margin-bottom: 16px;
+        }
+
+        .spread-positions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .spread-position {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .spread-position.empty {
+            border-style: dashed;
+            color: #7d8590;
+        }
+
+        .spread-position.filled {
+            border-color: #58a6ff;
+        }
+
+        .position-name {
+            font-weight: bold;
+            color: #c9d1d9;
+            margin-bottom: 8px;
+        }
+
+        .position-description {
+            font-size: 12px;
+            color: #7d8590;
+            margin-bottom: 8px;
+        }
+
+        .position-card {
+            font-size: 14px;
+            color: #58a6ff;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #1f6feb;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #1f6febcc;
+        }
+
+        .btn:disabled {
+            background-color: #30363d;
+            color: #7d8590;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #30363d;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 4px;
+            color: #c9d1d9;
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+            color: #c9d1d9;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Chat Interface */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 16px;
+            padding: 16px;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+        }
+
+        .chat-message {
+            margin-bottom: 16px;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .chat-message.user {
+            background-color: #1f6feb20;
+            border-left: 3px solid #1f6feb;
+        }
+
+        .chat-message.assistant {
+            background-color: #21262d;
+            border-left: 3px solid #58a6ff;
+        }
+
+        .chat-message-header {
+            font-size: 12px;
+            color: #7d8590;
+            margin-bottom: 4px;
+        }
+
+        .chat-message-content {
+            color: #c9d1d9;
+            line-height: 1.5;
+        }
+
+        .chat-input-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input {
+            flex: 1;
+        }
+
+        /* Loading States */
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #30363d;
+            border-radius: 50%;
+            border-top-color: #58a6ff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #30363d;
+            }
+            
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #7d8590;
+        }
+
+        .mb-16 {
+            margin-bottom: 16px;
+        }
+
+        .mt-16 {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">🔮 Tarot Studio</div>
+            
+            <nav>
+                <a href="#" class="nav-item active" data-view="readings">
+                    <i>📖</i> Readings
+                </a>
+                <a href="#" class="nav-item" data-view="chat">
+                    <i>💬</i> Chat
+                </a>
+                <a href="#" class="nav-item" data-view="history">
+                    <i>📚</i> History
+                </a>
+                <a href="#" class="nav-item" data-view="settings">
+                    <i>⚙️</i> Settings
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h1 id="view-title">Readings</h1>
+                <div class="ai-status offline" id="ai-status">AI: Offline</div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content">
+                <!-- Readings View -->
+                <div id="readings-view" class="view active">
+                    <div class="form-group">
+                        <label class="form-label">Select Spread</label>
+                        <select class="form-input" id="spread-select">
+                            <option value="">Loading spreads...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Question (Optional)</label>
+                        <textarea class="form-input form-textarea" id="question-input" placeholder="What guidance do you seek?"></textarea>
+                    </div>
+
+                    <div class="text-center mb-16">
+                        <button class="btn" id="draw-cards-btn">Draw Cards</button>
+                        <button class="btn btn-secondary" id="reset-deck-btn">Reset Deck</button>
+                    </div>
+
+                    <div id="spread-container" class="spread-container hidden">
+                        <div class="spread-title" id="spread-title"></div>
+                        <div class="spread-positions" id="spread-positions"></div>
+                    </div>
+
+                    <div class="mt-16">
+                        <button class="btn" id="save-reading-btn" disabled>Save Reading</button>
+                    </div>
+                </div>
+
+                <!-- Chat View -->
+                <div id="chat-view" class="view">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="chat-message assistant">
+                                <div class="chat-message-header">Tarot Assistant</div>
+                                <div class="chat-message-content">Hello! I'm your Tarot assistant. Ask me about cards, spreads, or interpretations.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input-container">
+                            <input type="text" class="form-input chat-input" id="chat-input" placeholder="Ask me about tarot...">
+                            <button class="btn" id="send-chat-btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History View -->
+                <div id="history-view" class="view">
+                    <h2>Reading History</h2>
+                    <div id="readings-list" class="mt-16">
+                        <div class="text-center text-muted">Loading readings...</div>
+                    </div>
+                </div>
+
+                <!-- Settings View -->
+                <div id="settings-view" class="view">
+                    <h2>Settings</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">AI Model</label>
+                        <select class="form-input" id="ai-model-select">
+                            <option value="llama2">Llama 2</option>
+                            <option value="mistral">Mistral</option>
+                            <option value="codellama">Code Llama</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Theme</label>
+                        <select class="form-input" id="theme-select">
+                            <option value="dark">Dark Terminal</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" id="auto-save-checkbox"> Auto-save readings
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" id="notifications-checkbox"> Enable notifications
+                        </label>
+                    </div>
+
+                    <button class="btn" id="save-settings-btn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let currentView = 'readings';
+        let currentSpread = null;
+        let drawnCards = [];
+        let spreads = [];
+        let readings = [];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        async function initializeApp() {
+            try {
+                await loadSpreads();
+                await loadReadings();
+                await checkAIStatus();
+                setupEventListeners();
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                showError('Failed to initialize application');
+            }
+        }
+
+        function setupEventListeners() {
+            // Navigation
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const view = this.dataset.view;
+                    switchView(view);
+                });
+            });
+
+            // Readings view
+            document.getElementById('draw-cards-btn').addEventListener('click', drawCards);
+            document.getElementById('reset-deck-btn').addEventListener('click', resetDeck);
+            document.getElementById('save-reading-btn').addEventListener('click', saveReading);
+
+            // Chat view
+            document.getElementById('send-chat-btn').addEventListener('click', sendChatMessage);
+            document.getElementById('chat-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendChatMessage();
+                }
+            });
+
+            // Settings view
+            document.getElementById('save-settings-btn').addEventListener('click', saveSettings);
+        }
+
+        function switchView(viewName) {
+            // Update navigation
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-view="${viewName}"]`).classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+            });
+            document.getElementById(`${viewName}-view`).classList.add('active');
+
+            // Update title
+            const titles = {
+                'readings': 'Readings',
+                'chat': 'Chat',
+                'history': 'History',
+                'settings': 'Settings'
+            };
+            document.getElementById('view-title').textContent = titles[viewName];
+
+            currentView = viewName;
+        }
+
+        async function loadSpreads() {
+            try {
+                const response = await fetch('/api/spreads');
+                const data = await response.json();
+                
+                if (data.success) {
+                    spreads = data.spreads;
+                    const select = document.getElementById('spread-select');
+                    select.innerHTML = '<option value="">Select a spread...</option>';
+                    
+                    spreads.forEach(spread => {
+                        const option = document.createElement('option');
+                        option.value = spread.id;
+                        option.textContent = `${spread.name} (${spread.positions.length} cards)`;
+                        select.appendChild(option);
+                    });
+
+                    select.addEventListener('change', function() {
+                        const spreadId = this.value;
+                        if (spreadId) {
+                            currentSpread = spreads.find(s => s.id === spreadId);
+                            updateSpreadDisplay();
+                        } else {
+                            hideSpreadDisplay();
+                        }
+                    });
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error loading spreads:', error);
+                showError('Failed to load spreads');
+            }
+        }
+
+        async function loadReadings() {
+            try {
+                const response = await fetch('/api/readings');
+                const data = await response.json();
+                
+                if (data.success) {
+                    readings = data.readings;
+                    updateReadingsList();
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error loading readings:', error);
+                showError('Failed to load readings');
+            }
+        }
+
+        async function checkAIStatus() {
+            try {
+                const response = await fetch('/api/settings');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const aiStatus = document.getElementById('ai-status');
+                    // For now, assume AI is offline if Ollama is not available
+                    aiStatus.textContent = 'AI: Offline';
+                    aiStatus.className = 'ai-status offline';
+                }
+            } catch (error) {
+                console.error('Error checking AI status:', error);
+            }
+        }
+
+        function updateSpreadDisplay() {
+            if (!currentSpread) return;
+
+            const container = document.getElementById('spread-container');
+            const title = document.getElementById('spread-title');
+            const positions = document.getElementById('spread-positions');
+
+            title.textContent = currentSpread.name;
+            positions.innerHTML = '';
+
+            currentSpread.positions.forEach((position, index) => {
+                const positionDiv = document.createElement('div');
+                positionDiv.className = 'spread-position empty';
+                positionDiv.innerHTML = `
+                    <div class="position-name">${position.name}</div>
+                    <div class="position-description">${position.description}</div>
+                    <div class="position-card">No card drawn</div>
+                `;
+                positions.appendChild(positionDiv);
+            });
+
+            container.classList.remove('hidden');
+        }
+
+        function hideSpreadDisplay() {
+            document.getElementById('spread-container').classList.add('hidden');
+            drawnCards = [];
+        }
+
+        async function drawCards() {
+            if (!currentSpread) {
+                showError('Please select a spread first');
+                return;
+            }
+
+            const numCards = currentSpread.positions.length;
+            const button = document.getElementById('draw-cards-btn');
+            button.disabled = true;
+            button.innerHTML = '<span class="loading"></span> Drawing...';
+
+            try {
+                const response = await fetch('/api/draw-cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ num_cards: numCards })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    drawnCards = data.cards;
+                    updateSpreadWithCards();
+                    document.getElementById('save-reading-btn').disabled = false;
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error drawing cards:', error);
+                showError('Failed to draw cards');
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Draw Cards';
+            }
+        }
+
+        function updateSpreadWithCards() {
+            const positions = document.querySelectorAll('.spread-position');
+            
+            positions.forEach((position, index) => {
+                if (index < drawnCards.length) {
+                    const card = drawnCards[index];
+                    position.className = 'spread-position filled';
+                    position.innerHTML = `
+                        <div class="position-name">${currentSpread.positions[index].name}</div>
+                        <div class="position-description">${currentSpread.positions[index].description}</div>
+                        <div class="position-card">${card.name}</div>
+                    `;
+                }
+            });
+        }
+
+        async function resetDeck() {
+            try {
+                const response = await fetch('/api/reset-deck', {
+                    method: 'POST'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    hideSpreadDisplay();
+                    document.getElementById('save-reading-btn').disabled = true;
+                    showSuccess('Deck reset successfully');
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error resetting deck:', error);
+                showError('Failed to reset deck');
+            }
+        }
+
+        async function saveReading() {
+            if (!currentSpread || drawnCards.length === 0) {
+                showError('Please draw cards first');
+                return;
+            }
+
+            const question = document.getElementById('question-input').value;
+            const readingData = {
+                title: `${currentSpread.name} Reading`,
+                spread_id: currentSpread.id,
+                question: question,
+                interpretation: 'Interpretation will be added here...',
+                summary: 'Reading summary...',
+                advice: ['Advice item 1', 'Advice item 2'],
+                tags: ['web-reading'],
+                people_involved: [],
+                is_private: false
+            };
+
+            try {
+                const response = await fetch('/api/readings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(readingData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showSuccess('Reading saved successfully');
+                    await loadReadings();
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error saving reading:', error);
+                showError('Failed to save reading');
+            }
+        }
+
+        async function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Add user message to chat
+            addChatMessage('user', message);
+            input.value = '';
+
+            // Send to AI
+            const button = document.getElementById('send-chat-btn');
+            button.disabled = true;
+            button.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    addChatMessage('assistant', data.response);
+                } else {
+                    addChatMessage('assistant', 'Sorry, I encountered an error. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error sending chat message:', error);
+                addChatMessage('assistant', 'Sorry, I encountered an error. Please try again.');
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Send';
+            }
+        }
+
+        function addChatMessage(role, content) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${role}`;
+            
+            const header = role === 'user' ? 'You' : 'Tarot Assistant';
+            messageDiv.innerHTML = `
+                <div class="chat-message-header">${header}</div>
+                <div class="chat-message-content">${content}</div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function updateReadingsList() {
+            const container = document.getElementById('readings-list');
+            
+            if (readings.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted">No readings yet</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            readings.forEach(reading => {
+                const readingDiv = document.createElement('div');
+                readingDiv.className = 'card';
+                readingDiv.innerHTML = `
+                    <div class="card-name">${reading.title}</div>
+                    <div class="card-keywords">${reading.spread_id}</div>
+                    <div class="card-meaning">${reading.question || 'No question'}</div>
+                `;
+                container.appendChild(readingDiv);
+            });
+        }
+
+        async function saveSettings() {
+            const settings = {
+                ai_model: document.getElementById('ai-model-select').value,
+                theme: document.getElementById('theme-select').value,
+                auto_save: document.getElementById('auto-save-checkbox').checked,
+                notifications: document.getElementById('notifications-checkbox').checked
+            };
+
+            try {
+                const response = await fetch('/api/settings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(settings)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showSuccess('Settings saved successfully');
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error saving settings:', error);
+                showError('Failed to save settings');
+            }
+        }
+
+        function showError(message) {
+            // Simple error display - could be enhanced with a proper notification system
+            alert('Error: ' + message);
+        }
+
+        function showSuccess(message) {
+            // Simple success display - could be enhanced with a proper notification system
+            alert('Success: ' + message);
+        }
+    </script>
+</body>
+</html>

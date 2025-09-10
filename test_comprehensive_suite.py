@@ -533,6 +533,68 @@ def test_database_module():
         return False
 
 
+def test_gui_module():
+    """Test GUI Module functionality."""
+    print("Testing GUI Module...")
+    
+    try:
+        from tarot_studio.gui.simple_server import TarotServer
+        
+        # Test server creation
+        server = TarotServer(host='127.0.0.1', port=8084)
+        print("✅ GUI server created successfully")
+        
+        # Test component initialization by creating a mock handler
+        from tarot_studio.gui.simple_server import TarotRequestHandler
+        
+        # Create a mock handler class for testing
+        class MockHandler(TarotRequestHandler):
+            def __init__(self):
+                # Initialize components without calling parent constructor
+                self._initialize_components()
+        
+        handler = MockHandler()
+        
+        # Test component initialization
+        assert handler.deck is not None, "Deck should be initialized"
+        assert handler.spread_manager is not None, "Spread manager should be initialized"
+        assert handler.ollama_client is not None, "Ollama client should be initialized"
+        assert handler.memory_store is not None, "Memory store should be initialized"
+        assert handler.db is not None, "Database should be initialized"
+        print("✅ GUI components initialized")
+        
+        # Test database operations
+        cards = handler.db.get_all_cards()
+        assert len(cards) > 0, "Should have cards in database"
+        
+        spreads = handler.db.get_all_spreads()
+        assert len(spreads) > 0, "Should have spreads in database"
+        print("✅ GUI database operations work")
+        
+        # Test deck operations
+        initial_count = len(handler.deck.cards)
+        card = handler.deck.draw_card()
+        assert card is not None, "Should be able to draw a card"
+        
+        handler.deck.reset()
+        assert len(handler.deck.cards) == initial_count, "Deck should be reset"
+        print("✅ GUI deck operations work")
+        
+        # Test HTML content generation
+        html_content = handler._get_html_content()
+        assert len(html_content) > 1000, "HTML content should be substantial"
+        assert '<html' in html_content, "Should contain HTML structure"
+        assert 'Tarot Studio' in html_content, "Should contain app title"
+        print("✅ HTML content generation works")
+        
+        print("✅ GUI Module tests passed")
+        return True
+        
+    except Exception as e:
+        print(f"❌ GUI Module test failed: {e}")
+        return False
+
+
 def test_data_integrity():
     """Test data integrity and consistency."""
     print("Testing Data Integrity...")
@@ -605,6 +667,7 @@ def main():
         test_ai_module,
         test_influence_engine,
         test_database_module,
+        test_gui_module,
         test_module_integration,
         test_file_structure,
         test_data_integrity
@@ -633,11 +696,12 @@ def main():
         print("✅ AI Module - 100% Complete")
         print("✅ Influence Engine - 100% Complete")
         print("✅ Database Module - 100% Complete")
+        print("✅ GUI Module - 100% Complete")
         print("✅ Core Integration - 100% Complete")
         print("\nReady for:")
-        print("🔄 GUI Module completion")
         print("🔄 History Module completion")
         print("🔄 Final packaging and distribution")
+        print("🔄 Production deployment")
         return True
     else:
         print("❌ Some tests failed.")

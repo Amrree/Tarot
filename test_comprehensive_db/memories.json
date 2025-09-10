@@ -8,5 +8,15 @@
     "importance_score": 0.8,
     "last_mentioned": "2025-09-10T12:36:50.403861",
     "created_at": "2025-09-10T12:36:50.403862"
+  },
+  {
+    "id": "eb4d5e50-56e2-48ac-a7e4-dbb4f3558881",
+    "entity_type": "person",
+    "entity_name": "Test Person",
+    "description": "A test person",
+    "context": null,
+    "importance_score": 0.8,
+    "last_mentioned": "2025-09-10T13:24:28.312677",
+    "created_at": "2025-09-10T13:24:28.312680"
   }
 ]
