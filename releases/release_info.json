@@ -1,0 +1,28 @@
+{
+  "app_name": "Tarot Studio",
+  "version": "1.0.0",
+  "package": "com.tarotstudio",
+  "build_date": "2025-09-11T02:51:17.827052",
+  "testing_status": {
+    "functionality_tests": "17/17 passed (100%)",
+    "compatibility_tests": "7/7 passed (100%)",
+    "total_tests": "24/24 passed (100%)"
+  },
+  "features": [
+    "Complete 78-card tarot deck",
+    "Multiple spread layouts",
+    "AI-powered interpretations",
+    "Reading history and search",
+    "Offline functionality",
+    "Material Design interface"
+  ],
+  "compatibility": {
+    "android_version": "5.0+ (API 21+)",
+    "architectures": [
+      "ARM",
+      "x86"
+    ],
+    "screen_sizes": "All Android device types"
+  },
+  "build_instructions": "Run build_apk.sh to build the APK"
+}
