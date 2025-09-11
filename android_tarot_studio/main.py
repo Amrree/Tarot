@@ -162,9 +162,12 @@ class TarotStudioApp(App):
         
         drawn = []
         for _ in range(num_cards):
-            card = self.deck.draw_card()
-            if card:
-                drawn.append(card)
+            if len(self.deck.cards) > 0:  # Check if deck has cards
+                card = self.deck.draw_card()
+                if card:
+                    drawn.append(card)
+            else:
+                break  # Stop if deck is empty
         
         self.drawn_cards = drawn
         return drawn

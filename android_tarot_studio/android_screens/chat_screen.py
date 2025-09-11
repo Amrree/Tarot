@@ -279,6 +279,7 @@ class ChatScreen(Screen):
     def _clear_chat(self, instance):
         """Clear the chat history."""
         self.chat_container.clear_widgets()
+        self.chat_messages = []  # Clear the messages list
         self._add_welcome_message()
     
     def _go_back(self, instance):

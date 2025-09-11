@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Test Reading",
+    "spread_id": "single_card",
+    "question": "Test question?",
+    "interpretation": "Test interpretation",
+    "summary": "Test summary",
+    "advice": [
+      "Test advice"
+    ],
+    "tags": [
+      "test"
+    ],
+    "people_involved": [],
+    "is_private": false,
+    "id": "17c79a31-b1d0-4eac-b1ce-1df8ba471c25",
+    "created_at": "2025-09-11T02:16:59.576017",
+    "updated_at": "2025-09-11T02:16:59.576037"
+  },
+  {
+    "title": "Test Reading",
+    "spread_id": "single_card",
+    "question": "Test question?",
+    "interpretation": "Test interpretation",
+    "summary": "Test summary",
+    "advice": [
+      "Test advice"
+    ],
+    "tags": [
+      "test"
+    ],
+    "people_involved": [],
+    "is_private": false,
+    "id": "7394ab0e-9765-4b95-9c3d-22157ba4c314",
+    "created_at": "2025-09-11T02:17:15.445309",
+    "updated_at": "2025-09-11T02:17:15.445329"
+  },
+  {
+    "title": "Test Reading",
+    "spread_id": "single_card",
+    "question": "Test question?",
+    "interpretation": "Test interpretation",
+    "summary": "Test summary",
+    "advice": [
+      "Test advice"
+    ],
+    "tags": [
+      "test"
+    ],
+    "people_involved": [],
+    "is_private": false,
+    "id": "d7f68b13-7d18-4ff7-be31-3c806e58b3b4",
+    "created_at": "2025-09-11T02:17:27.808761",
+    "updated_at": "2025-09-11T02:17:27.808779"
+  }
+]
