@@ -1,0 +1,39 @@
+# Tarot Studio Android App Requirements
+
+# Core Kivy framework
+kivy>=2.1.0
+kivymd>=1.1.0
+
+# HTTP requests
+requests>=2.28.0
+urllib3>=1.26.0
+certifi>=2022.0.0
+charset-normalizer>=2.0.0
+idna>=3.0.0
+
+# JSON handling (built-in, but listed for completeness)
+# json - built-in module
+
+# Date/time handling (built-in)
+# datetime - built-in module
+
+# File system operations (built-in)
+# pathlib - built-in module
+
+# Threading (built-in)
+# threading - built-in module
+
+# Logging (built-in)
+# logging - built-in module
+
+# UUID generation (built-in)
+# uuid - built-in module
+
+# Hash functions (built-in)
+# hashlib - built-in module
+
+# Async support (built-in)
+# asyncio - built-in module
+
+# Note: The tarot_studio modules are included via the source code
+# and don't need to be installed as packages since they're part of the app
